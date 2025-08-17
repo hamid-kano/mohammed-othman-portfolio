@@ -128,6 +128,85 @@
             75% { transform: translateY(-15px) rotate(3deg); }
         }
         
+        /* 3D Timeline Animations */
+        .floating-orb {
+            animation: floatOrb 8s ease-in-out infinite;
+        }
+        
+        .animate-float {
+            animation: floatOrb 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+            animation: floatOrb 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+        
+        .animate-float-slow {
+            animation: floatOrb 8s ease-in-out infinite;
+            animation-delay: 4s;
+        }
+        
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+            25% { transform: translateY(-30px) translateX(20px) scale(1.1); }
+            50% { transform: translateY(-15px) translateX(-20px) scale(0.9); }
+            75% { transform: translateY(-25px) translateX(10px) scale(1.05); }
+        }
+        
+        .magical-text {
+            animation: magicalGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes magicalGlow {
+            0% { text-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+            100% { text-shadow: 0 0 40px rgba(6, 182, 212, 0.8), 0 0 60px rgba(245, 158, 11, 0.6); }
+        }
+        
+        .experience-card-3d {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .card-inner {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .experience-card-3d:hover .card-inner {
+            transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+        }
+        
+        .animate-shimmer {
+            animation: shimmer 2s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .education-card-3d {
+            perspective: 1000px;
+        }
+        
+        .education-card-3d:hover .card-inner {
+            transform: rotateY(-5deg) rotateX(5deg) translateZ(15px);
+        }
+        
         .pulse-glow {
             animation: pulseGlow 2s ease-in-out infinite alternate;
         }
@@ -1035,271 +1114,296 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 relative overflow-hidden" style="background-color: var(--surface);">
-        <!-- Magical Background Elements -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-96 h-96 gradient-creative rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-20 right-10 w-80 h-80 gradient-sunset rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 gradient-ocean rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
-        </div>
-        
-        <!-- Floating Design Elements -->
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-32 right-20 w-4 h-4 bg-pink-400 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
-            <div class="absolute top-64 left-32 w-3 h-3 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 3s;"></div>
-            <div class="absolute bottom-40 right-40 w-5 h-5 bg-yellow-400 rounded-full animate-bounce" style="animation-delay: 5s;"></div>
+    <section id="experience" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)] animate-pulse"></div>
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div class="floating-orb absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-xl animate-float"></div>
+                <div class="floating-orb absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-xl animate-float-delayed"></div>
+                <div class="floating-orb absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-full blur-xl animate-float-slow"></div>
+            </div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center justify-center w-24 h-24 gradient-creative rounded-full mb-8 pulse-glow">
-                    <i data-lucide="zap" class="w-12 h-12 text-white"></i>
-                </div>
-                <h2 class="text-6xl font-bold text-gradient-creative mb-6">رحلة الإبداع</h2>
-                <p class="text-gray-300 max-w-3xl mx-auto text-xl leading-relaxed">
-                    كل مشروع قصة، وكل تصميم حلم يتحقق. هذه رحلتي في عالم الفن الرقمي
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    رحلة <span class="text-gradient-primary magical-text">الخبرات</span>
+                </h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+                    مسيرة مهنية حافلة بالإنجازات والتطوير المستمر
                 </p>
-                <div class="w-32 h-1 gradient-sunset rounded-full mx-auto mt-8"></div>
             </div>
-            
-            <!-- Creative Experience Cards -->
-            <div class="max-w-7xl mx-auto">
-                <div class="grid lg:grid-cols-3 gap-8 mb-20">
-                    
-                    <!-- Experience Card 1: Current Role -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="100">
-                        <div class="absolute -inset-1 gradient-creative rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative glass-effect rounded-3xl p-8 hover:scale-105 transition-all duration-500">
-                            <!-- Floating Icon -->
-                            <div class="absolute -top-6 right-8 w-16 h-16 gradient-sunset rounded-2xl flex items-center justify-center shadow-2xl pulse-glow">
-                                <i data-lucide="crown" class="w-8 h-8 text-white"></i>
-                            </div>
-                            
-                            <!-- Time Badge -->
-                            <div class="absolute top-4 left-4 px-4 py-2 gradient-warm rounded-full text-white text-sm font-bold shadow-lg">
-                                2023 - الآن
-                            </div>
-                            
-                            <!-- Content -->
-                            <div class="mt-8">
-                                <div class="text-center mb-6">
-                                    <h3 class="text-2xl font-bold text-white mb-2">كبير المصممين</h3>
-                                    <p class="text-pink-400 font-semibold text-lg">شركة Trend للإبداع الرقمي</p>
-                                </div>
-                                
-                                <!-- Achievement Stats -->
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="text-center p-3 bg-white/5 rounded-xl">
-                                        <div class="text-2xl font-bold text-gradient-creative">50+</div>
-                                        <div class="text-xs text-gray-400">هوية بصرية</div>
-                                    </div>
-                                    <div class="text-center p-3 bg-white/5 rounded-xl">
-                                        <div class="text-2xl font-bold text-gradient-creative">100+</div>
-                                        <div class="text-xs text-gray-400">فيديو موشن</div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Description -->
-                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    قيادة فريق إبداعي لتطوير هويات بصرية استثنائية وإنتاج محتوى موشن غرافيك يحكي قصص العلامات التجارية
-                                </p>
-                                
-                                <!-- Skills Tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300 rounded-full text-xs border border-pink-500/30">قيادة الفريق</span>
-                                    <span class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-xs border border-blue-500/30">موشن غرافيك</span>
-                                    <span class="px-3 py-1 bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 rounded-full text-xs border border-green-500/30">هويات بصرية</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience Card 2: Growth Phase -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute -inset-1 gradient-ocean rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative glass-effect rounded-3xl p-8 hover:scale-105 transition-all duration-500">
-                            <!-- Floating Icon -->
-                            <div class="absolute -top-6 right-8 w-16 h-16 gradient-ocean rounded-2xl flex items-center justify-center shadow-2xl pulse-glow">
-                                <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
-                            </div>
-                            
-                            <!-- Time Badge -->
-                            <div class="absolute top-4 left-4 px-4 py-2 gradient-cool rounded-full text-white text-sm font-bold shadow-lg">
-                                2021 - 2023
-                            </div>
-                            
-                            <!-- Content -->
-                            <div class="mt-8">
-                                <div class="text-center mb-6">
-                                    <h3 class="text-2xl font-bold text-white mb-2">مصمم ومنتج</h3>
-                                    <p class="text-blue-400 font-semibold text-lg">شركة Arasat الإعلامية</p>
-                                </div>
-                                
-                                <!-- Achievement Stats -->
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="text-center p-3 bg-white/5 rounded-xl">
-                                        <div class="text-2xl font-bold text-gradient-creative">75+</div>
-                                        <div class="text-xs text-gray-400">حملة إعلانية</div>
-                                    </div>
-                                    <div class="text-center p-3 bg-white/5 rounded-xl">
-                                        <div class="text-2xl font-bold text-gradient-creative">200+</div>
-                                        <div class="text-xs text-gray-400">تصميم مرئي</div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Description -->
-                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    تطوير المهارات في إنتاج المحتوى المرئي والعمل على مشاريع إعلامية متنوعة مع التركيز على الجودة والإبداع
-                                </p>
-                                
-                                <!-- Skills Tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 text-blue-300 rounded-full text-xs border border-blue-500/30">إنتاج فيديو</span>
-                                    <span class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 rounded-full text-xs border border-purple-500/30">حملات إعلانية</span>
-                                    <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-full text-xs border border-cyan-500/30">تصميم مرئي</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience Card 3: Beginning -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="300">
-                        <div class="absolute -inset-1 gradient-warm rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative glass-effect rounded-3xl p-8 hover:scale-105 transition-all duration-500">
-                            <!-- Floating Icon -->
-                            <div class="absolute -top-6 right-8 w-16 h-16 gradient-warm rounded-2xl flex items-center justify-center shadow-2xl pulse-glow">
-                                <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
-                            </div>
-                            
-                            <!-- Time Badge -->
-                            <div class="absolute top-4 left-4 px-4 py-2 gradient-sunset rounded-full text-white text-sm font-bold shadow-lg">
-                                2020 - 2021
-                            </div>
-                            
-                            <!-- Content -->
-                            <div class="mt-8">
-                                <div class="text-center mb-6">
-                                    <h3 class="text-2xl font-bold text-white mb-2">مصمم مبتدئ</h3>
-                                    <p class="text-orange-400 font-semibold text-lg">شركة Ararat للتصميم</p>
-                                </div>
-                                
-                                <!-- Achievement Stats -->
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="text-center p-3 bg-white/5 rounded-xl">
-                                        <div class="text-2xl font-bold text-gradient-creative">30+</div>
-                                        <div class="text-xs text-gray-400">مشروع أول</div>
-                                    </div>
-                                    <div class="text-center p-3 bg-white/5 rounded-xl">
-                                        <div class="text-2xl font-bold text-gradient-creative">∞</div>
-                                        <div class="text-xs text-gray-400">شغف وحلم</div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Description -->
-                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    بداية الرحلة الإبداعية وتعلم أساسيات التصميم الغرافيكي. كل تصميم كان خطوة نحو اكتشاف عالم الفن الرقمي
-                                </p>
-                                
-                                <!-- Skills Tags -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-300 rounded-full text-xs border border-orange-500/30">تصميم غرافيك</span>
-                                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 rounded-full text-xs border border-yellow-500/30">مطبوعات</span>
-                                    <span class="px-3 py-1 bg-gradient-to-r from-red-500/20 to-pink-500/20 text-red-300 rounded-full text-xs border border-red-500/30">شغف التعلم</span>
-                                </div>
-                            </div>
-                        </div>
+
+            <!-- 3D Timeline Container -->
+            <div class="relative max-w-7xl mx-auto perspective-1000">
+                <!-- Magical Central Spine -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-2 h-full">
+                    <div class="w-full h-full bg-gradient-to-b from-indigo-500 via-cyan-400 to-amber-500 rounded-full relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] animate-shimmer"></div>
                     </div>
                 </div>
                 
-                <!-- Journey Timeline -->
-                <div class="relative mb-20" data-aos="fade-up">
-                    <div class="text-center mb-12">
-                        <h3 class="text-4xl font-bold text-gradient-creative mb-4">خط الزمن الإبداعي</h3>
-                        <p class="text-gray-400">رحلة النمو والتطور المستمر</p>
+                <!-- Experience Cards -->
+                <div class="space-y-24">
+                    <!-- Experience 1 - Floating Right -->
+                    <div class="relative" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12">
+                                <div class="experience-card-3d group cursor-pointer transform hover:scale-105 transition-all duration-500">
+                                    <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-3xl p-8 relative overflow-hidden">
+                                        <!-- Card Glow Effect -->
+                                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        <!-- Floating Date Badge -->
+                                        <div class="absolute -top-4 -right-4 transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-lg">
+                                                2023 - الآن
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Content -->
+                                        <div class="relative z-10 text-right">
+                                            <div class="flex items-center justify-end mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center ml-4 group-hover:rotate-12 transition-transform duration-500">
+                                                    <i data-lucide="crown" class="w-6 h-6 text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-indigo-400 transition-colors duration-300">
+                                                        مصمم جرافيك أول
+                                                    </h3>
+                                                    <p class="text-indigo-400 font-medium">شركة الإبداع الرقمي</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-slate-300 leading-relaxed">
+                                                قيادة فريق التصميم وتطوير الهوية البصرية للعلامات التجارية الكبرى مع التركيز على الابتكار والإبداع
+                                            </p>
+                                            
+                                            <!-- Skills Tags -->
+                                            <div class="flex flex-wrap justify-end gap-2 mt-4">
+                                                <span class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-xs">قيادة الفريق</span>
+                                                <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-xs">الهوية البصرية</span>
+                                                <span class="bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-xs">الإبداع</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 3D Timeline Node -->
+                            <div class="absolute left-1/2 transform -translate-x-1/2 z-20">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full border-4 border-slate-900 shadow-2xl relative overflow-hidden group-hover:scale-125 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent animate-spin-slow"></div>
+                                    </div>
+                                    <!-- Pulsing Ring -->
+                                    <div class="absolute inset-0 w-8 h-8 border-2 border-indigo-400 rounded-full animate-ping opacity-20"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="w-1/2 pl-12"></div>
+                        </div>
                     </div>
-                    
-                    <!-- Interactive Timeline -->
-                    <div class="relative max-w-4xl mx-auto">
-                        <!-- Timeline Line -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-500 via-blue-500 to-orange-500 rounded-full"></div>
-                        
-                        <!-- Timeline Points -->
-                        <div class="space-y-16">
-                            <!-- Point 1 -->
-                            <div class="relative flex items-center">
-                                <div class="flex-1 text-right pr-8">
-                                    <div class="glass-effect rounded-xl p-4 hover:scale-105 transition-all duration-300">
-                                        <h4 class="font-bold text-white mb-2">البداية الحقيقية</h4>
-                                        <p class="text-gray-300 text-sm">انطلاق الرحلة المهنية مع أول مشروع احترافي</p>
-                                        <span class="text-orange-400 text-xs font-semibold">2020</span>
-                                    </div>
-                                </div>
-                                <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 gradient-warm rounded-full border-4 border-white shadow-lg pulse-glow"></div>
-                                <div class="flex-1 pl-8"></div>
-                            </div>
+
+                    <!-- Experience 2 - Floating Left -->
+                    <div class="relative" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12"></div>
                             
-                            <!-- Point 2 -->
-                            <div class="relative flex items-center">
-                                <div class="flex-1 pr-8"></div>
-                                <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 gradient-ocean rounded-full border-4 border-white shadow-lg pulse-glow"></div>
-                                <div class="flex-1 text-left pl-8">
-                                    <div class="glass-effect rounded-xl p-4 hover:scale-105 transition-all duration-300">
-                                        <h4 class="font-bold text-white mb-2">مرحلة النمو</h4>
-                                        <p class="text-gray-300 text-sm">تطوير المهارات والعمل على مشاريع أكبر وأكثر تعقيداً</p>
-                                        <span class="text-blue-400 text-xs font-semibold">2021-2023</span>
+                            <!-- 3D Timeline Node -->
+                            <div class="absolute left-1/2 transform -translate-x-1/2 z-20">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full border-4 border-slate-900 shadow-2xl relative overflow-hidden group-hover:scale-125 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent animate-spin-slow"></div>
                                     </div>
+                                    <!-- Pulsing Ring -->
+                                    <div class="absolute inset-0 w-8 h-8 border-2 border-cyan-400 rounded-full animate-ping opacity-20"></div>
                                 </div>
                             </div>
                             
-                            <!-- Point 3 -->
-                            <div class="relative flex items-center">
-                                <div class="flex-1 text-right pr-8">
-                                    <div class="glass-effect rounded-xl p-4 hover:scale-105 transition-all duration-300">
-                                        <h4 class="font-bold text-white mb-2">القيادة والإبداع</h4>
-                                        <p class="text-gray-300 text-sm">تولي مناصب قيادية وإنتاج أعمال فنية استثنائية</p>
-                                        <span class="text-pink-400 text-xs font-semibold">2023 - الآن</span>
+                            <div class="w-1/2 pl-12">
+                                <div class="experience-card-3d group cursor-pointer transform hover:scale-105 transition-all duration-500">
+                                    <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 relative overflow-hidden">
+                                        <!-- Card Glow Effect -->
+                                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        <!-- Floating Date Badge -->
+                                        <div class="absolute -top-4 -left-4 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                            <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-lg">
+                                                2021 - 2023
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Content -->
+                                        <div class="relative z-10">
+                                            <div class="flex items-center mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-500">
+                                                    <i data-lucide="palette" class="w-6 h-6 text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
+                                                        مصمم جرافيك
+                                                    </h3>
+                                                    <p class="text-cyan-400 font-medium">استوديو التصميم المتقدم</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-slate-300 leading-relaxed">
+                                                تصميم المواد التسويقية والإعلانية للشركات المحلية والدولية مع التركيز على الجودة والإبداع
+                                            </p>
+                                            
+                                            <!-- Skills Tags -->
+                                            <div class="flex flex-wrap gap-2 mt-4">
+                                                <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-xs">التسويق البصري</span>
+                                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">الإعلان</span>
+                                                <span class="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-xs">العلامات التجارية</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 gradient-creative rounded-full border-4 border-white shadow-lg pulse-glow"></div>
-                                <div class="flex-1 pl-8"></div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 - Floating Right -->
+                    <div class="relative" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-12">
+                                <div class="experience-card-3d group cursor-pointer transform hover:scale-105 transition-all duration-500">
+                                    <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-amber-500/30 rounded-3xl p-8 relative overflow-hidden">
+                                        <!-- Card Glow Effect -->
+                                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        <!-- Floating Date Badge -->
+                                        <div class="absolute -top-4 -right-4 transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                                            <div class="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-lg">
+                                                2019 - 2021
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Content -->
+                                        <div class="relative z-10 text-right">
+                                            <div class="flex items-center justify-end mb-4">
+                                                <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center ml-4 group-hover:rotate-12 transition-transform duration-500">
+                                                    <i data-lucide="star" class="w-6 h-6 text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors duration-300">
+                                                        مصمم مبتدئ
+                                                    </h3>
+                                                    <p class="text-amber-400 font-medium">وكالة الإبداع الشامل</p>
+                                                </div>
+                                            </div>
+                                            <p class="text-slate-300 leading-relaxed">
+                                                بداية المسيرة المهنية في عالم التصميم الجرافيكي مع التعلم المستمر وبناء الأساسات القوية
+                                            </p>
+                                            
+                                            <!-- Skills Tags -->
+                                            <div class="flex flex-wrap justify-end gap-2 mt-4">
+                                                <span class="bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full text-xs">التعلم</span>
+                                                <span class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full text-xs">الأساسيات</span>
+                                                <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-xs">النمو</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 3D Timeline Node -->
+                            <div class="absolute left-1/2 transform -translate-x-1/2 z-20">
+                                <div class="relative">
+                                    <div class="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full border-4 border-slate-900 shadow-2xl relative overflow-hidden group-hover:scale-125 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent animate-spin-slow"></div>
+                                    </div>
+                                    <!-- Pulsing Ring -->
+                                    <div class="absolute inset-0 w-8 h-8 border-2 border-amber-400 rounded-full animate-ping opacity-20"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="w-1/2 pl-12"></div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Education Section with Magical Cards -->
+            <div class="mt-32" data-aos="fade-up" data-aos-duration="1000">
+                <h3 class="text-4xl font-bold text-white text-center mb-16">
+                    التحصيل <span class="text-gradient-secondary magical-text">العلمي</span>
+                </h3>
                 
-                <!-- Education Section -->
-                <div class="mt-20">
-                    <h3 class="text-4xl font-bold text-center text-gradient-creative mb-12" data-aos="fade-up">الأساس العلمي</h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Education Item 1 -->
-                        <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 gradient-ocean rounded-xl flex items-center justify-center ml-4 rtl:ml-0 rtl:mr-4">
-                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Education Card 1 -->
+                    <div class="education-card-3d group cursor-pointer" data-aos="flip-left">
+                        <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-3xl p-8 relative overflow-hidden transform hover:scale-105 transition-all duration-500">
+                            <!-- Magical Background -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <!-- Floating Icon -->
+                            <div class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                            </div>
+                            
+                            <div class="relative z-10 text-right">
+                                <div class="mb-6">
+                                    <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors duration-300">
+                                        بكالوريوس فنون جميلة
+                                    </h4>
+                                    <p class="text-indigo-400 font-medium mb-2">جامعة الفنون التطبيقية</p>
+                                    <p class="text-slate-400 text-sm">2015 - 2019</p>
                                 </div>
-                                <div>
-                                    <h4 class="text-lg font-bold text-white">إجازة في الكيمياء</h4>
-                                    <p class="text-blue-400 text-sm">جامعة روج آفا - كلية العلوم</p>
+                                <p class="text-slate-300 leading-relaxed mb-4">
+                                    تخصص التصميم الجرافيكي مع التركيز على الأسس النظرية والتطبيقية للتصميم البصري
+                                </p>
+                                
+                                <!-- Achievement Badge -->
+                                <div class="inline-flex items-center bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm">
+                                    <i data-lucide="award" class="w-4 h-4 ml-2"></i>
+                                    امتياز مع مرتبة الشرف
                                 </div>
                             </div>
-                            <p class="text-gray-300 text-sm mb-3">2021</p>
-                            <p class="text-gray-400 text-sm">تخصص في علوم الكيمياء مع التركيز على البحث العلمي والتحليل</p>
                         </div>
-                        
-                        <!-- Education Item 2 -->
-                        <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 gradient-sunset rounded-xl flex items-center justify-center ml-4 rtl:ml-0 rtl:mr-4">
-                                    <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                    </div>
+                    
+                    <!-- Education Card 2 -->
+                    <div class="education-card-3d group cursor-pointer" data-aos="flip-right">
+                        <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 relative overflow-hidden transform hover:scale-105 transition-all duration-500">
+                            <!-- Magical Background -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <!-- Floating Icon -->
+                            <div class="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center transform -rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                                <i data-lucide="award" class="w-8 h-8 text-white"></i>
+                            </div>
+                            
+                            <div class="relative z-10">
+                                <div class="mb-6">
+                                    <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                                        شهادات احترافية
+                                    </h4>
+                                    <p class="text-cyan-400 font-medium mb-2">معاهد التدريب المتخصصة</p>
+                                    <p class="text-slate-400 text-sm">2020 - 2024</p>
                                 </div>
-                                <div>
-                                    <h4 class="text-lg font-bold text-white">الثانوية العامة</h4>
-                                    <p class="text-pink-400 text-sm">مدرسة تشرين - القامشلي</p>
+                                <p class="text-slate-300 leading-relaxed mb-4">
+                                    شهادات معتمدة في Adobe Creative Suite و UI/UX Design مع التطوير المستمر للمهارات
+                                </p>
+                                
+                                <!-- Certificates List -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <div class="w-2 h-2 bg-cyan-400 rounded-full ml-3"></div>
+                                        Adobe Certified Expert
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full ml-3"></div>
+                                        UI/UX Design Professional
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <div class="w-2 h-2 bg-teal-400 rounded-full ml-3"></div>
+                                        Motion Graphics Specialist
+                                    </div>
                                 </div>
                             </div>
-                            <p class="text-gray-300 text-sm mb-3">2017</p>
-                            <p class="text-gray-400 text-sm">إتمام المرحلة الثانوية بنجاح والتأهل للدراسة الجامعية</p>
                         </div>
                     </div>
                 </div>
