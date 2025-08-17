@@ -242,66 +242,35 @@
             text-align: right;
         }
         
-        /* Override specific alignments */
+        /* Center alignment override */
         .text-center {
             text-align: center !important;
         }
         
-        .text-left {
-            text-align: left !important;
+        /* Button spacing fix */
+        .btn-spacing {
+            gap: 1rem;
         }
         
-        /* RTL Flexbox adjustments */
-        .flex {
-            flex-direction: row-reverse;
-        }
-        
-        .flex-col {
-            flex-direction: column;
-        }
-        
-        .flex-row {
-            flex-direction: row-reverse;
-        }
-        
-        /* RTL Spacing overrides */
-        .space-x-1 > :not([hidden]) ~ :not([hidden]) {
-            margin-right: 0.25rem;
-            margin-left: 0;
-        }
-        
-        .space-x-2 > :not([hidden]) ~ :not([hidden]) {
-            margin-right: 0.5rem;
-            margin-left: 0;
-        }
-        
-        .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-            margin-right: 1rem;
-            margin-left: 0;
-        }
-        
-        /* RTL Margin adjustments */
-        .ml-1 { margin-right: 0.25rem; margin-left: 0; }
-        .ml-2 { margin-right: 0.5rem; margin-left: 0; }
-        .ml-4 { margin-right: 1rem; margin-left: 0; }
-        .mr-2 { margin-left: 0.5rem; margin-right: 0; }
-        .mr-4 { margin-left: 1rem; margin-right: 0; }
-        
-        /* RTL Positioning */
-        .right-1\/2 { left: 50%; right: auto; }
-        .left-1\/2 { right: 50%; left: auto; }
-        
-        /* RTL Transform */
-        .transform.translate-x-1\/2 { transform: translateX(-50%); }
-        .transform.-translate-x-1\/2 { transform: translateX(50%); }
-        
-        /* Form elements */
+        /* Form elements RTL */
         input, textarea, select {
             text-align: right;
+            direction: rtl;
         }
         
         input::placeholder, textarea::placeholder {
             text-align: right;
+            direction: rtl;
+        }
+        
+        /* Skills bar RTL */
+        .skill-bar {
+            transform-origin: right;
+        }
+        
+        /* Portfolio overlay RTL */
+        .portfolio-overlay {
+            text-align: center;
         }
         
         /* Creative Loading Animation */
@@ -332,10 +301,10 @@
     <!-- Creative Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-effect transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex items-center h-20" style="justify-content: space-between; flex-direction: row;">
                 <!-- Logo -->
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 gradient-sunset rounded-xl flex items-center justify-center shadow-lg pulse-glow">
+                <div class="flex items-center" style="flex-direction: row;">
+                    <div class="w-12 h-12 gradient-sunset rounded-xl flex items-center justify-center shadow-lg pulse-glow" style="margin-left: 1rem;">
                         <i data-lucide="palette" class="w-6 h-6 text-white"></i>
                     </div>
                     <div>
@@ -345,7 +314,7 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-1">
+                <div class="hidden lg:flex items-center" style="flex-direction: row; gap: 0.25rem;">
                     <a href="#home" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
                         <span class="text-white font-medium">الرئيسية</span>
                     </a>
@@ -367,14 +336,14 @@
                 </div>
 
                 <!-- CTA Button & Mobile Menu -->
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center" style="flex-direction: row; gap: 1rem;">
                     <!-- Mobile Menu Button -->
                     <button class="lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors" id="mobile-menu-btn">
                         <i data-lucide="menu" class="w-6 h-6 text-white"></i>
                     </button>
                     
-                    <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 gradient-sunset text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                        <i data-lucide="mail" class="w-4 h-4 ml-2"></i>
+                    <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 gradient-sunset text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300" style="flex-direction: row;">
+                        <i data-lucide="mail" class="w-4 h-4" style="margin-left: 0.5rem;"></i>
                         تواصل معي
                     </a>
                 </div>
@@ -470,7 +439,7 @@
                 </div>
                 
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex flex-col sm:flex-row items-center justify-center btn-spacing space-y-4 sm:space-y-0" data-aos="fade-up" data-aos-delay="600">
                     <a href="#contact" class="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-gray-900 hover:scale-105 transition-all duration-300">
                         <i data-lucide="download" class="w-5 h-5 ml-2"></i>
                         تحميل السيرة الذاتية
@@ -588,7 +557,7 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <div class="flex flex-col sm:flex-row btn-spacing space-y-3 sm:space-y-0">
                         <button class="inline-flex items-center justify-center border-2 border-pink-400 text-pink-400 px-8 py-3 rounded-full font-semibold hover:bg-pink-400 hover:text-white transition-all hover:scale-105">
                             <i data-lucide="download" class="w-4 h-4 ml-2"></i>
                             تحميل السيرة الذاتية
@@ -1208,7 +1177,7 @@
                         <!-- Social Links -->
                         <div class="glass-effect rounded-2xl p-6 hover-lift">
                             <h3 class="text-xl font-bold text-white mb-4">تابعني على</h3>
-                            <div class="flex space-x-4 justify-start">
+                            <div class="flex btn-spacing justify-start">
                                 <a href="#" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center hover:bg-green-500 hover:scale-110 transition-all duration-300">
                                     <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
                                 </a>
@@ -1262,9 +1231,9 @@
                                         إرسال الرسالة
                                         <i data-lucide="send" class="w-5 h-5 mr-2"></i>
                                     </button>
-                                    <div class="flex items-center space-x-2 text-white/60 text-sm">
-                                        <span>معلوماتك آمنة وسرية</span>
+                                    <div class="flex items-center btn-spacing text-white/60 text-sm">
                                         <i data-lucide="shield-check" class="w-4 h-4 text-green-400"></i>
+                                        <span>معلوماتك آمنة وسرية</span>
                                     </div>
                                 </div>
                             </form>
@@ -1296,7 +1265,7 @@
                     </p>
                     
                     <!-- Social Links -->
-                    <div class="flex space-x-4">
+                    <div class="flex btn-spacing">
                         <a href="#" class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-green-500 hover:scale-110 transition-all duration-300">
                             <i data-lucide="message-circle" class="w-5 h-5 text-gray-300 hover:text-white"></i>
                         </a>
@@ -1345,11 +1314,11 @@
                     <p class="text-gray-400 text-sm">© 2024 محمد عثمان. جميع الحقوق محفوظة.</p>
                     
                     <!-- Back to Top -->
-                    <a href="#home" class="flex items-center space-x-2 text-gray-400 hover:text-pink-400 transition-colors duration-300">
+                    <a href="#home" class="flex items-center btn-spacing text-gray-400 hover:text-pink-400 transition-colors duration-300">
+                        <span class="text-sm">العودة للأعلى</span>
                         <div class="w-8 h-8 bg-gray-700/50 rounded-lg flex items-center justify-center hover:bg-pink-500/20 transition-all duration-300">
                             <i data-lucide="arrow-up" class="w-4 h-4"></i>
                         </div>
-                        <span class="text-sm">العودة للأعلى</span>
                     </a>
                 </div>
             </div>
