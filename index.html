@@ -43,27 +43,52 @@
             background: linear-gradient(45deg, #ff5252, #26a69a);
         }
         
-        /* Creative Gradient Backgrounds */
+        /* Modern Color System */
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --surface: #1e293b;
+            --surface-light: #334155;
+            --background: #0f172a;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #64748b;
+        }
+        
+        /* Modern Gradient Backgrounds */
         .gradient-creative {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
             background-size: 400% 400%;
             animation: gradientShift 8s ease infinite;
         }
         
         .gradient-warm {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
         }
         
         .gradient-cool {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
         }
         
         .gradient-sunset {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 50%, #42a5f5 100%);
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
         }
         
         .gradient-ocean {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+        }
+        
+        .gradient-purple {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+        }
+        
+        .gradient-emerald {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         }
         
         @keyframes gradientShift {
@@ -72,17 +97,23 @@
             100% { background-position: 0% 50%; }
         }
         
-        /* Glass Effect */
+        /* Modern Glass Effect */
         .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(148, 163, 184, 0.2);
         }
         
         .glass-dark {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+        
+        .glass-primary {
+            background: rgba(99, 102, 241, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
         }
         
         /* Creative Animations */
@@ -103,21 +134,35 @@
         
         @keyframes pulseGlow {
             from {
-                box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
             }
             to {
-                box-shadow: 0 0 40px rgba(78, 205, 196, 0.8);
+                box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
             }
         }
         
-        /* Creative Text Effects */
+        /* Modern Text Effects */
         .text-gradient-creative {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: gradientText 3s ease infinite;
+        }
+        
+        .text-gradient-primary {
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-gradient-secondary {
+            background: linear-gradient(45deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         @keyframes gradientText {
@@ -187,9 +232,9 @@
         /* Skills Animation */
         .skill-bar {
             height: 8px;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 10px;
-            transform-origin: left;
+            transform-origin: right;
             transform: scaleX(0);
             transition: transform 1.5s ease-out;
         }
@@ -198,7 +243,7 @@
             transform: scaleX(1);
         }
         
-        /* Creative Navigation */
+        /* Modern Navigation */
         .nav-item {
             position: relative;
             overflow: hidden;
@@ -208,10 +253,10 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            right: 0;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transition: width 0.3s ease;
         }
         
@@ -283,7 +328,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             animation: loadingDot 1.4s ease-in-out infinite both;
         }
         
@@ -296,7 +341,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white overflow-x-hidden">
+<body class="overflow-x-hidden" style="background-color: var(--background); color: var(--text-primary);">
     
     <!-- Creative Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-effect transition-all duration-300" id="navbar">
@@ -308,30 +353,30 @@
                         <i data-lucide="palette" class="w-6 h-6 text-white"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-gradient-creative">محمد عثمان</h1>
-                        <p class="text-xs text-gray-300 font-medium">مصمم غرافيك</p>
+                        <h1 class="text-xl font-bold text-gradient-primary">محمد عثمان</h1>
+                        <p class="text-xs font-medium" style="color: var(--text-secondary);">مصمم غرافيك</p>
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center" style="flex-direction: row; gap: 0.25rem;">
                     <a href="#home" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="text-white font-medium">الرئيسية</span>
+                        <span class="font-medium" style="color: var(--text-primary);">الرئيسية</span>
                     </a>
                     <a href="#about" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="text-white font-medium">نبذة عني</span>
+                        <span class="font-medium" style="color: var(--text-primary);">نبذة عني</span>
                     </a>
                     <a href="#skills" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="text-white font-medium">مهاراتي</span>
+                        <span class="font-medium" style="color: var(--text-primary);">مهاراتي</span>
                     </a>
                     <a href="#portfolio" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="text-white font-medium">أعمالي</span>
+                        <span class="font-medium" style="color: var(--text-primary);">أعمالي</span>
                     </a>
                     <a href="#experience" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="text-white font-medium">خبراتي</span>
+                        <span class="font-medium" style="color: var(--text-primary);">خبراتي</span>
                     </a>
                     <a href="#contact" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="text-white font-medium">تواصل معي</span>
+                        <span class="font-medium" style="color: var(--text-primary);">تواصل معي</span>
                     </a>
                 </div>
 
@@ -415,26 +460,26 @@
                 
                 <!-- Name and Title -->
                 <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
-                    <h1 class="text-5xl sm:text-6xl font-bold text-white mb-4">
+                    <h1 class="text-5xl sm:text-6xl font-bold mb-4" style="color: var(--text-primary);">
                         محمد <span class="text-gradient-creative">عثمان</span>
                     </h1>
-                    <div class="text-xl sm:text-2xl text-white/90 mb-2">مصمم غرافيك محترف</div>
-                    <div class="text-lg text-white/70">متخصص في التصميم البصري والموشن غرافيك</div>
+                    <div class="text-xl sm:text-2xl mb-2" style="color: var(--text-secondary);">مصمم غرافيك محترف</div>
+                    <div class="text-lg" style="color: var(--text-muted);">متخصص في التصميم البصري والموشن غرافيك</div>
                 </div>
                 
                 <!-- Stats -->
                 <div class="grid grid-cols-3 gap-4 sm:gap-8 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
                     <div class="glass-effect rounded-2xl p-4 sm:p-6 hover-lift">
                         <div class="text-2xl sm:text-3xl font-bold text-gradient-creative mb-2">5+</div>
-                        <div class="text-sm sm:text-base text-white/80">سنوات خبرة</div>
+                        <div class="text-sm sm:text-base" style="color: var(--text-secondary);">سنوات خبرة</div>
                     </div>
                     <div class="glass-effect rounded-2xl p-4 sm:p-6 hover-lift">
                         <div class="text-2xl sm:text-3xl font-bold text-gradient-creative mb-2">200+</div>
-                        <div class="text-sm sm:text-base text-white/80">مشروع مكتمل</div>
+                        <div class="text-sm sm:text-base" style="color: var(--text-secondary);">مشروع مكتمل</div>
                     </div>
                     <div class="glass-effect rounded-2xl p-4 sm:p-6 hover-lift">
                         <div class="text-2xl sm:text-3xl font-bold text-gradient-creative mb-2">100+</div>
-                        <div class="text-sm sm:text-base text-white/80">عميل راضي</div>
+                        <div class="text-sm sm:text-base" style="color: var(--text-secondary);">عميل راضي</div>
                     </div>
                 </div>
                 
@@ -462,11 +507,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-900 relative">
+    <section id="about" class="py-20 relative" style="background-color: var(--surface);">
         <div class="container mx-auto px-6 relative">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-gradient-creative mb-4">نبذة شخصية</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-gradient-primary mb-4">نبذة شخصية</h2>
+                <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
                     لدي شغف كبير في مجالي وقادر على تحمل ضغوط العمل والعمل بروح الفريق، مع رغبة دائمة في التعلم والتطوير ومواكبة أحدث الاتجاهات في عالم التصميم والإعلام الرقمي.
                 </p>
             </div>
@@ -483,8 +528,8 @@
                 </div>
                 
                 <div data-aos="fade-left">
-                    <h3 class="text-3xl font-bold mb-6 text-white">مصمم غرافيك ومنتج محتوى</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--text-primary);">مصمم غرافيك ومنتج محتوى</h3>
+                    <p class="mb-6 leading-relaxed" style="color: var(--text-secondary);">
                         أعمل في مجال التصميم الغرافيكي منذ أكثر من 5 سنوات، متخصص في تصميم الهويات البصرية، المطبوعات، والموشن غرافيك. أسعى دائماً لتقديم حلول إبداعية تلبي احتياجات العملاء وتحقق أهدافهم التسويقية.
                     </p>
                     
@@ -576,20 +621,20 @@
     <section id="skills" class="py-20 gradient-ocean relative">
         <div class="container mx-auto px-6 relative">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-white mb-4">مهاراتي التقنية</h2>
-                <p class="text-white/80 max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold mb-4" style="color: var(--text-primary);">مهاراتي التقنية</h2>
+                <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
                     خبرة واسعة في أدوات التصميم المختلفة مع التركيز على الجودة والإبداع
                 </p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12">
                 <div data-aos="fade-right">
-                    <h3 class="text-2xl font-bold text-white mb-8">برامج التصميم</h3>
+                    <h3 class="text-2xl font-bold mb-8" style="color: var(--text-primary);">برامج التصميم</h3>
                     <div class="space-y-6">
                         <div class="skill-item">
                             <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Adobe Photoshop</span>
-                                <span class="text-pink-300">80%</span>
+                                <span class="font-semibold" style="color: var(--text-primary);">Adobe Photoshop</span>
+                                <span style="color: var(--primary);">80%</span>
                             </div>
                             <div class="bg-white/20 rounded-full h-3">
                                 <div class="skill-bar h-3 rounded-full" data-width="80"></div>
@@ -697,7 +742,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-20 bg-gray-900 relative">
+    <section class="py-20 relative" style="background-color: var(--background);">
         <div class="container mx-auto px-6 relative">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold text-gradient-creative mb-4">خدماتي</h2>
@@ -990,112 +1035,241 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-900 relative">
-        <div class="container mx-auto px-6 relative">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-gradient-creative mb-4">خبراتي العملية</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">
-                    رحلتي المهنية في عالم التصميم الغرافيكي والإعلام الرقمي
+    <section id="experience" class="py-20 relative overflow-hidden" style="background-color: var(--surface);">
+        <!-- Magical Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-96 h-96 gradient-creative rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 gradient-sunset rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 gradient-ocean rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <!-- Floating Design Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-32 right-20 w-4 h-4 bg-pink-400 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+            <div class="absolute top-64 left-32 w-3 h-3 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 3s;"></div>
+            <div class="absolute bottom-40 right-40 w-5 h-5 bg-yellow-400 rounded-full animate-bounce" style="animation-delay: 5s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="inline-flex items-center justify-center w-24 h-24 gradient-creative rounded-full mb-8 pulse-glow">
+                    <i data-lucide="zap" class="w-12 h-12 text-white"></i>
+                </div>
+                <h2 class="text-6xl font-bold text-gradient-creative mb-6">رحلة الإبداع</h2>
+                <p class="text-gray-300 max-w-3xl mx-auto text-xl leading-relaxed">
+                    كل مشروع قصة، وكل تصميم حلم يتحقق. هذه رحلتي في عالم الفن الرقمي
                 </p>
+                <div class="w-32 h-1 gradient-sunset rounded-full mx-auto mt-8"></div>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <!-- Timeline -->
-                <div class="relative">
-                    <!-- Timeline Line -->
-                    <div class="absolute right-1/2 transform translate-x-1/2 w-1 h-full gradient-sunset rounded-full hidden lg:block"></div>
+            <!-- Creative Experience Cards -->
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-3 gap-8 mb-20">
                     
-                    <!-- Experience Item 1 -->
-                    <div class="relative flex items-center mb-12" data-aos="fade-right">
-                        <div class="lg:w-1/2 lg:pr-8 w-full">
-                            <div class="glass-effect rounded-2xl p-8 hover-lift">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="w-12 h-12 gradient-sunset rounded-xl flex items-center justify-center">
-                                        <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                    <span class="text-sm font-semibold text-pink-400 bg-pink-900/30 px-3 py-1 rounded-full">2023 - 2025</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-white mb-2">مصمم غرافيك - منتج - موشن غرافيك</h3>
-                                <p class="text-pink-400 font-semibold mb-3">شركة Trend</p>
-                                <p class="text-gray-300 leading-relaxed mb-4">
-                                    تنفيذ التصاميم المرئية وتطوير الهويات البصرية. إنتاج وتصميم فيديوهات موشن غرافيك للإعلانات والحملات التسويقية.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-sm">موشن غرافيك</span>
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">هويات بصرية</span>
-                                    <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">إنتاج فيديو</span>
-                                </div>
+                    <!-- Experience Card 1: Current Role -->
+                    <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute -inset-1 gradient-creative rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative glass-effect rounded-3xl p-8 hover:scale-105 transition-all duration-500">
+                            <!-- Floating Icon -->
+                            <div class="absolute -top-6 right-8 w-16 h-16 gradient-sunset rounded-2xl flex items-center justify-center shadow-2xl pulse-glow">
+                                <i data-lucide="crown" class="w-8 h-8 text-white"></i>
                             </div>
-                        </div>
-                        
-                        <!-- Timeline Node -->
-                        <div class="hidden lg:flex lg:absolute lg:right-1/2 lg:transform lg:translate-x-1/2 w-4 h-4 gradient-sunset rounded-full border-4 border-white shadow-lg"></div>
-                        
-                        <div class="lg:w-1/2 lg:pl-8 hidden lg:block"></div>
-                    </div>
-                    
-                    <!-- Experience Item 2 -->
-                    <div class="relative flex items-center mb-12" data-aos="fade-left">
-                        <div class="lg:w-1/2 lg:pr-8 hidden lg:block"></div>
-                        
-                        <!-- Timeline Node -->
-                        <div class="hidden lg:flex lg:absolute lg:right-1/2 lg:transform lg:translate-x-1/2 w-4 h-4 gradient-cool rounded-full border-4 border-white shadow-lg"></div>
-                        
-                        <div class="lg:w-1/2 lg:pl-8 w-full">
-                            <div class="glass-effect rounded-2xl p-8 hover-lift">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="w-12 h-12 gradient-cool rounded-xl flex items-center justify-center">
-                                        <i data-lucide="video" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                    <span class="text-sm font-semibold text-blue-400 bg-blue-900/30 px-3 py-1 rounded-full">2021 - 2023</span>
+                            
+                            <!-- Time Badge -->
+                            <div class="absolute top-4 left-4 px-4 py-2 gradient-warm rounded-full text-white text-sm font-bold shadow-lg">
+                                2023 - الآن
+                            </div>
+                            
+                            <!-- Content -->
+                            <div class="mt-8">
+                                <div class="text-center mb-6">
+                                    <h3 class="text-2xl font-bold text-white mb-2">كبير المصممين</h3>
+                                    <p class="text-pink-400 font-semibold text-lg">شركة Trend للإبداع الرقمي</p>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2">مصمم غرافيك ومنتج</h3>
-                                <p class="text-blue-400 font-semibold mb-3">شركة Arasat</p>
-                                <p class="text-gray-300 leading-relaxed mb-4">
-                                    تنفيذ التصاميم المرئية وإنتاج الفيديوهات للمشاريع الإعلانية. العمل على حملات تسويقية متنوعة.
+                                
+                                <!-- Achievement Stats -->
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="text-center p-3 bg-white/5 rounded-xl">
+                                        <div class="text-2xl font-bold text-gradient-creative">50+</div>
+                                        <div class="text-xs text-gray-400">هوية بصرية</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-white/5 rounded-xl">
+                                        <div class="text-2xl font-bold text-gradient-creative">100+</div>
+                                        <div class="text-xs text-gray-400">فيديو موشن</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Description -->
+                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                    قيادة فريق إبداعي لتطوير هويات بصرية استثنائية وإنتاج محتوى موشن غرافيك يحكي قصص العلامات التجارية
                                 </p>
+                                
+                                <!-- Skills Tags -->
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">تصميم مرئي</span>
-                                    <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">إنتاج فيديو</span>
-                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">حملات إعلانية</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-pink-300 rounded-full text-xs border border-pink-500/30">قيادة الفريق</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-xs border border-blue-500/30">موشن غرافيك</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 rounded-full text-xs border border-green-500/30">هويات بصرية</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Experience Item 3 -->
-                    <div class="relative flex items-center mb-12" data-aos="fade-right">
-                        <div class="lg:w-1/2 lg:pr-8 w-full">
-                            <div class="glass-effect rounded-2xl p-8 hover-lift">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="w-12 h-12 gradient-warm rounded-xl flex items-center justify-center">
-                                        <i data-lucide="image" class="w-6 h-6 text-white"></i>
-                                    </div>
-                                    <span class="text-sm font-semibold text-orange-400 bg-orange-900/30 px-3 py-1 rounded-full">2020 - 2021</span>
+                    <!-- Experience Card 2: Growth Phase -->
+                    <div class="relative group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -inset-1 gradient-ocean rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative glass-effect rounded-3xl p-8 hover:scale-105 transition-all duration-500">
+                            <!-- Floating Icon -->
+                            <div class="absolute -top-6 right-8 w-16 h-16 gradient-ocean rounded-2xl flex items-center justify-center shadow-2xl pulse-glow">
+                                <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+                            </div>
+                            
+                            <!-- Time Badge -->
+                            <div class="absolute top-4 left-4 px-4 py-2 gradient-cool rounded-full text-white text-sm font-bold shadow-lg">
+                                2021 - 2023
+                            </div>
+                            
+                            <!-- Content -->
+                            <div class="mt-8">
+                                <div class="text-center mb-6">
+                                    <h3 class="text-2xl font-bold text-white mb-2">مصمم ومنتج</h3>
+                                    <p class="text-blue-400 font-semibold text-lg">شركة Arasat الإعلامية</p>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2">مصمم غرافيك</h3>
-                                <p class="text-orange-400 font-semibold mb-3">شركة Ararat</p>
-                                <p class="text-gray-300 leading-relaxed mb-4">
-                                    تنفيذ التصاميم المرئية ومطبوعات متنوعة. بداية رحلتي المهنية في عالم التصميم الاحترافي.
+                                
+                                <!-- Achievement Stats -->
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="text-center p-3 bg-white/5 rounded-xl">
+                                        <div class="text-2xl font-bold text-gradient-creative">75+</div>
+                                        <div class="text-xs text-gray-400">حملة إعلانية</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-white/5 rounded-xl">
+                                        <div class="text-2xl font-bold text-gradient-creative">200+</div>
+                                        <div class="text-xs text-gray-400">تصميم مرئي</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Description -->
+                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                    تطوير المهارات في إنتاج المحتوى المرئي والعمل على مشاريع إعلامية متنوعة مع التركيز على الجودة والإبداع
                                 </p>
+                                
+                                <!-- Skills Tags -->
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-sm">تصميم غرافيك</span>
-                                    <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-sm">مطبوعات</span>
-                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">تصميم مرئي</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 text-blue-300 rounded-full text-xs border border-blue-500/30">إنتاج فيديو</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 rounded-full text-xs border border-purple-500/30">حملات إعلانية</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-full text-xs border border-cyan-500/30">تصميم مرئي</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Experience Card 3: Beginning -->
+                    <div class="relative group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute -inset-1 gradient-warm rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative glass-effect rounded-3xl p-8 hover:scale-105 transition-all duration-500">
+                            <!-- Floating Icon -->
+                            <div class="absolute -top-6 right-8 w-16 h-16 gradient-warm rounded-2xl flex items-center justify-center shadow-2xl pulse-glow">
+                                <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+                            </div>
+                            
+                            <!-- Time Badge -->
+                            <div class="absolute top-4 left-4 px-4 py-2 gradient-sunset rounded-full text-white text-sm font-bold shadow-lg">
+                                2020 - 2021
+                            </div>
+                            
+                            <!-- Content -->
+                            <div class="mt-8">
+                                <div class="text-center mb-6">
+                                    <h3 class="text-2xl font-bold text-white mb-2">مصمم مبتدئ</h3>
+                                    <p class="text-orange-400 font-semibold text-lg">شركة Ararat للتصميم</p>
+                                </div>
+                                
+                                <!-- Achievement Stats -->
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="text-center p-3 bg-white/5 rounded-xl">
+                                        <div class="text-2xl font-bold text-gradient-creative">30+</div>
+                                        <div class="text-xs text-gray-400">مشروع أول</div>
+                                    </div>
+                                    <div class="text-center p-3 bg-white/5 rounded-xl">
+                                        <div class="text-2xl font-bold text-gradient-creative">∞</div>
+                                        <div class="text-xs text-gray-400">شغف وحلم</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Description -->
+                                <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                    بداية الرحلة الإبداعية وتعلم أساسيات التصميم الغرافيكي. كل تصميم كان خطوة نحو اكتشاف عالم الفن الرقمي
+                                </p>
+                                
+                                <!-- Skills Tags -->
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-300 rounded-full text-xs border border-orange-500/30">تصميم غرافيك</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 rounded-full text-xs border border-yellow-500/30">مطبوعات</span>
+                                    <span class="px-3 py-1 bg-gradient-to-r from-red-500/20 to-pink-500/20 text-red-300 rounded-full text-xs border border-red-500/30">شغف التعلم</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Journey Timeline -->
+                <div class="relative mb-20" data-aos="fade-up">
+                    <div class="text-center mb-12">
+                        <h3 class="text-4xl font-bold text-gradient-creative mb-4">خط الزمن الإبداعي</h3>
+                        <p class="text-gray-400">رحلة النمو والتطور المستمر</p>
+                    </div>
+                    
+                    <!-- Interactive Timeline -->
+                    <div class="relative max-w-4xl mx-auto">
+                        <!-- Timeline Line -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-500 via-blue-500 to-orange-500 rounded-full"></div>
                         
-                        <!-- Timeline Node -->
-                        <div class="hidden lg:flex lg:absolute lg:right-1/2 lg:transform lg:translate-x-1/2 w-4 h-4 gradient-warm rounded-full border-4 border-white shadow-lg"></div>
-                        
-                        <div class="lg:w-1/2 lg:pl-8 hidden lg:block"></div>
+                        <!-- Timeline Points -->
+                        <div class="space-y-16">
+                            <!-- Point 1 -->
+                            <div class="relative flex items-center">
+                                <div class="flex-1 text-right pr-8">
+                                    <div class="glass-effect rounded-xl p-4 hover:scale-105 transition-all duration-300">
+                                        <h4 class="font-bold text-white mb-2">البداية الحقيقية</h4>
+                                        <p class="text-gray-300 text-sm">انطلاق الرحلة المهنية مع أول مشروع احترافي</p>
+                                        <span class="text-orange-400 text-xs font-semibold">2020</span>
+                                    </div>
+                                </div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 gradient-warm rounded-full border-4 border-white shadow-lg pulse-glow"></div>
+                                <div class="flex-1 pl-8"></div>
+                            </div>
+                            
+                            <!-- Point 2 -->
+                            <div class="relative flex items-center">
+                                <div class="flex-1 pr-8"></div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 gradient-ocean rounded-full border-4 border-white shadow-lg pulse-glow"></div>
+                                <div class="flex-1 text-left pl-8">
+                                    <div class="glass-effect rounded-xl p-4 hover:scale-105 transition-all duration-300">
+                                        <h4 class="font-bold text-white mb-2">مرحلة النمو</h4>
+                                        <p class="text-gray-300 text-sm">تطوير المهارات والعمل على مشاريع أكبر وأكثر تعقيداً</p>
+                                        <span class="text-blue-400 text-xs font-semibold">2021-2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Point 3 -->
+                            <div class="relative flex items-center">
+                                <div class="flex-1 text-right pr-8">
+                                    <div class="glass-effect rounded-xl p-4 hover:scale-105 transition-all duration-300">
+                                        <h4 class="font-bold text-white mb-2">القيادة والإبداع</h4>
+                                        <p class="text-gray-300 text-sm">تولي مناصب قيادية وإنتاج أعمال فنية استثنائية</p>
+                                        <span class="text-pink-400 text-xs font-semibold">2023 - الآن</span>
+                                    </div>
+                                </div>
+                                <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 gradient-creative rounded-full border-4 border-white shadow-lg pulse-glow"></div>
+                                <div class="flex-1 pl-8"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Education Section -->
                 <div class="mt-20">
-                    <h3 class="text-3xl font-bold text-center text-gradient-creative mb-12" data-aos="fade-up">التحصيل العلمي</h3>
+                    <h3 class="text-4xl font-bold text-center text-gradient-creative mb-12" data-aos="fade-up">الأساس العلمي</h3>
                     
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Education Item 1 -->
@@ -1245,7 +1419,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 relative overflow-hidden">
+    <footer class="relative overflow-hidden" style="background-color: var(--background);">
         <div class="container mx-auto px-6 py-16 relative">
             <!-- Main Footer Content -->
             <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-12">
