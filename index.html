@@ -11,463 +11,50 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-        
-        * {
-            font-family: 'Cairo', 'Poppins', sans-serif;
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #1a1a2e;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #ff5252, #26a69a);
-        }
-        
-        /* Modern Color System */
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #06b6d4;
-            --accent: #f59e0b;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --error: #ef4444;
-            --surface: #1e293b;
-            --surface-light: #334155;
-            --background: #0f172a;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #64748b;
-        }
-        
-        /* Modern Gradient Backgrounds */
-        .gradient-creative {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        .gradient-warm {
-            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-        }
-        
-        .gradient-cool {
-            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-        }
-        
-        .gradient-sunset {
-            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
-        }
-        
-        .gradient-ocean {
-            background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
-        }
-        
-        .gradient-purple {
-            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-        }
-        
-        .gradient-emerald {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Modern Glass Effect */
-        .glass-effect {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-        }
-        
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(100, 116, 139, 0.2);
-        }
-        
-        .glass-primary {
-            background: rgba(99, 102, 241, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-        }
-        
-        /* Creative Animations */
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(5deg); }
-            50% { transform: translateY(-10px) rotate(-5deg); }
-            75% { transform: translateY(-15px) rotate(3deg); }
-        }
-        
-        /* 3D Timeline Animations */
-        .floating-orb {
-            animation: floatOrb 8s ease-in-out infinite;
-        }
-        
-        .animate-float {
-            animation: floatOrb 6s ease-in-out infinite;
-        }
-        
-        .animate-float-delayed {
-            animation: floatOrb 6s ease-in-out infinite;
-            animation-delay: 2s;
-        }
-        
-        .animate-float-slow {
-            animation: floatOrb 8s ease-in-out infinite;
-            animation-delay: 4s;
-        }
-        
-        @keyframes floatOrb {
-            0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-            25% { transform: translateY(-30px) translateX(20px) scale(1.1); }
-            50% { transform: translateY(-15px) translateX(-20px) scale(0.9); }
-            75% { transform: translateY(-25px) translateX(10px) scale(1.05); }
-        }
-        
-        .magical-text {
-            animation: magicalGlow 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes magicalGlow {
-            0% { text-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
-            100% { text-shadow: 0 0 40px rgba(6, 182, 212, 0.8), 0 0 60px rgba(245, 158, 11, 0.6); }
-        }
-        
-        .experience-card-3d {
-            perspective: 1000px;
-            transform-style: preserve-3d;
-        }
-        
-        .card-inner {
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-            transform-style: preserve-3d;
-        }
-        
-        .experience-card-3d:hover .card-inner {
-            transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
-        }
-        
-        .animate-shimmer {
-            animation: shimmer 2s linear infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .animate-spin-slow {
-            animation: spin 8s linear infinite;
-        }
-        
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .perspective-1000 {
-            perspective: 1000px;
-        }
-        
-        .education-card-3d {
-            perspective: 1000px;
-        }
-        
-        .education-card-3d:hover .card-inner {
-            transform: rotateY(-5deg) rotateX(5deg) translateZ(15px);
-        }
-        
-        .pulse-glow {
-            animation: pulseGlow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes pulseGlow {
-            from {
-                box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
-            }
-            to {
-                box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
-            }
-        }
-        
-        /* Modern Text Effects */
-        .text-gradient-creative {
-            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientText 3s ease infinite;
-        }
-        
-        .text-gradient-primary {
-            background: linear-gradient(45deg, #6366f1, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .text-gradient-secondary {
-            background: linear-gradient(45deg, #06b6d4, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        @keyframes gradientText {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        /* Creative Hover Effects */
-        .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Creative Shapes */
-        .creative-shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: floatShape 8s ease-in-out infinite;
-        }
-        
-        @keyframes floatShape {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(30px, -30px) rotate(90deg); }
-            50% { transform: translate(-20px, -60px) rotate(180deg); }
-            75% { transform: translate(-40px, -20px) rotate(270deg); }
-        }
-        
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255, 107, 107, 0.9), rgba(78, 205, 196, 0.9));
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        /* Skills Animation */
-        .skill-bar {
-            height: 8px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: transform 1.5s ease-out;
-        }
-        
-        .skill-bar.animate {
-            transform: scaleX(1);
-        }
-        
-        /* Modern Navigation */
-        .nav-item {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 0.3s ease;
-        }
-        
-        .nav-item:hover::before,
-        .nav-item.active::before {
-            width: 100%;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .text-6xl { font-size: 2.5rem !important; }
-            .text-5xl { font-size: 2rem !important; }
-            .text-4xl { font-size: 1.75rem !important; }
-        }
-        
-        /* Global RTL Support */
-        html {
-            direction: rtl;
-        }
-        
-        body {
-            direction: rtl;
-            text-align: right;
-        }
-        
-        /* Center alignment override */
-        .text-center {
-            text-align: center !important;
-        }
-        
-        /* Button spacing fix */
-        .btn-spacing {
-            gap: 1rem;
-        }
-        
-        /* Form elements RTL */
-        input, textarea, select {
-            text-align: right;
-            direction: rtl;
-        }
-        
-        input::placeholder, textarea::placeholder {
-            text-align: right;
-            direction: rtl;
-        }
-        
-        /* Skills bar RTL */
-        .skill-bar {
-            transform-origin: right;
-        }
-        
-        /* Portfolio overlay RTL */
-        .portfolio-overlay {
-            text-align: center;
-        }
-        
-        /* Creative Loading Animation */
-        .loading-dots {
-            display: inline-flex;
-            gap: 4px;
-        }
-        
-        .loading-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            animation: loadingDot 1.4s ease-in-out infinite both;
-        }
-        
-        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
-        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
-        
-        @keyframes loadingDot {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
-    </style>
 </head>
-<body class="overflow-x-hidden" style="background-color: var(--background); color: var(--text-primary);">
+<body class="bg-slate-900 text-slate-50 overflow-x-hidden">
     
-    <!-- Creative Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect transition-all duration-300" id="navbar">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center h-20" style="justify-content: space-between; flex-direction: row;">
+            <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <div class="flex items-center" style="flex-direction: row;">
-                    <div class="w-12 h-12 gradient-sunset rounded-xl flex items-center justify-center shadow-lg pulse-glow" style="margin-left: 1rem;">
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg animate-pulse">
                         <i data-lucide="palette" class="w-6 h-6 text-white"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-gradient-primary">محمد عثمان</h1>
-                        <p class="text-xs font-medium" style="color: var(--text-secondary);">مصمم غرافيك</p>
+                        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">محمد عثمان</h1>
+                        <p class="text-xs font-medium text-slate-400">مصمم غرافيك</p>
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center" style="flex-direction: row; gap: 0.25rem;">
-                    <a href="#home" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="font-medium" style="color: var(--text-primary);">الرئيسية</span>
-                    </a>
-                    <a href="#about" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="font-medium" style="color: var(--text-primary);">نبذة عني</span>
-                    </a>
-                    <a href="#skills" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="font-medium" style="color: var(--text-primary);">مهاراتي</span>
-                    </a>
-                    <a href="#portfolio" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="font-medium" style="color: var(--text-primary);">أعمالي</span>
-                    </a>
-                    <a href="#experience" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="font-medium" style="color: var(--text-primary);">خبراتي</span>
-                    </a>
-                    <a href="#contact" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
-                        <span class="font-medium" style="color: var(--text-primary);">تواصل معي</span>
-                    </a>
+                <div class="hidden lg:flex items-center space-x-1 rtl:space-x-reverse">
+                    <a href="#home" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-slate-200 hover:text-white">الرئيسية</a>
+                    <a href="#about" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-slate-200 hover:text-white">نبذة عني</a>
+                    <a href="#skills" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-slate-200 hover:text-white">مهاراتي</a>
+                    <a href="#portfolio" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-slate-200 hover:text-white">أعمالي</a>
+                    <a href="#experience" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-slate-200 hover:text-white">خبراتي</a>
+                    <a href="#contact" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-slate-200 hover:text-white">تواصل معي</a>
                 </div>
 
                 <!-- CTA Button & Mobile Menu -->
-                <div class="flex items-center" style="flex-direction: row; gap: 1rem;">
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <!-- Mobile Menu Button -->
                     <button class="lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors" id="mobile-menu-btn">
                         <i data-lucide="menu" class="w-6 h-6 text-white"></i>
                     </button>
                     
-                    <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 gradient-sunset text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300" style="flex-direction: row;">
-                        <i data-lucide="mail" class="w-4 h-4" style="margin-left: 0.5rem;"></i>
+                    <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                        <i data-lucide="mail" class="w-4 h-4 ml-2"></i>
                         تواصل معي
                     </a>
                 </div>
@@ -476,106 +63,78 @@
 
         <!-- Mobile Menu -->
         <div class="lg:hidden hidden" id="mobile-menu">
-            <div class="glass-dark border-t border-white/10 shadow-lg">
+            <div class="bg-slate-800/95 backdrop-blur-lg border-t border-white/10 shadow-lg">
                 <div class="px-4 py-6 space-y-4">
-                    <a href="#home" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
-                        <span class="font-medium text-gray-200">الرئيسية</span>
-                    </a>
-                    <a href="#about" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
-                        <span class="font-medium text-gray-200">نبذة عني</span>
-                    </a>
-                    <a href="#skills" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
-                        <span class="font-medium text-gray-200">مهاراتي</span>
-                    </a>
-                    <a href="#portfolio" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
-                        <span class="font-medium text-gray-200">أعمالي</span>
-                    </a>
-                    <a href="#experience" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
-                        <span class="font-medium text-gray-200">خبراتي</span>
-                    </a>
-                    <a href="#contact" class="block px-4 py-3 gradient-sunset text-white rounded-lg font-semibold text-center">
-                        تواصل معي
-                    </a>
+                    <a href="#home" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center text-slate-200">الرئيسية</a>
+                    <a href="#about" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center text-slate-200">نبذة عني</a>
+                    <a href="#skills" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center text-slate-200">مهاراتي</a>
+                    <a href="#portfolio" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center text-slate-200">أعمالي</a>
+                    <a href="#experience" class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-center text-slate-200">خبراتي</a>
+                    <a href="#contact" class="block px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-center">تواصل معي</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Creative Floating Shapes -->
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="creative-shape w-32 h-32 gradient-warm top-20 left-10"></div>
-        <div class="creative-shape w-24 h-24 gradient-cool top-40 right-20" style="animation-delay: 2s;"></div>
-        <div class="creative-shape w-40 h-40 gradient-sunset bottom-20 left-20" style="animation-delay: 4s;"></div>
-        <div class="creative-shape w-28 h-28 gradient-ocean top-60 right-10" style="animation-delay: 6s;"></div>
-    </div>
-
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen gradient-creative flex items-center justify-center relative overflow-hidden pt-20">
-        <!-- Animated Background Pattern -->
+    <section id="home" class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
-            <svg class="w-full h-full" viewBox="0 0 100 100">
-                <defs>
-                    <pattern id="creative-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <circle cx="10" cy="10" r="2" fill="white"/>
-                        <path d="M5,5 L15,15 M15,5 L5,15" stroke="white" stroke-width="0.5"/>
-                        <rect x="7" y="7" width="6" height="6" fill="none" stroke="white" stroke-width="0.5"/>
-                    </pattern>
-                </defs>
-                <rect width="100" height="100" fill="url(#creative-pattern)"/>
-            </svg>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.3),transparent_50%)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.3),transparent_50%)]"></div>
         </div>
         
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <div class="max-w-6xl mx-auto text-center">
                 <!-- Profile Image -->
                 <div class="relative inline-block mb-8" data-aos="zoom-in">
-                    <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-white/30 shadow-2xl pulse-glow">
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="محمد عثمان" class="w-full h-full object-cover">
                     </div>
-                    <div class="absolute -bottom-2 -right-2 w-8 h-8 gradient-sunset rounded-full border-4 border-white flex items-center justify-center">
+                    <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-4 border-white flex items-center justify-center">
                         <i data-lucide="check" class="w-4 h-4 text-white"></i>
                     </div>
                 </div>
                 
                 <!-- Name and Title -->
                 <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
-                    <h1 class="text-5xl sm:text-6xl font-bold mb-4" style="color: var(--text-primary);">
-                        محمد <span class="text-gradient-creative">عثمان</span>
+                    <h1 class="text-5xl sm:text-6xl font-bold text-white mb-4">
+                        محمد <span class="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">عثمان</span>
                     </h1>
-                    <div class="text-xl sm:text-2xl mb-2" style="color: var(--text-secondary);">مصمم غرافيك محترف</div>
-                    <div class="text-lg" style="color: var(--text-muted);">متخصص في التصميم البصري والموشن غرافيك</div>
+                    <div class="text-xl sm:text-2xl mb-2 text-slate-300">مصمم غرافيك محترف</div>
+                    <div class="text-lg text-slate-400">متخصص في التصميم البصري والموشن غرافيك</div>
                 </div>
                 
                 <!-- Stats -->
                 <div class="grid grid-cols-3 gap-4 sm:gap-8 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-                    <div class="glass-effect rounded-2xl p-4 sm:p-6 hover-lift">
-                        <div class="text-2xl sm:text-3xl font-bold text-gradient-creative mb-2">5+</div>
-                        <div class="text-sm sm:text-base" style="color: var(--text-secondary);">سنوات خبرة</div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 hover:scale-105 transition-transform duration-300">
+                        <div class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">5+</div>
+                        <div class="text-sm sm:text-base text-slate-300">سنوات خبرة</div>
                     </div>
-                    <div class="glass-effect rounded-2xl p-4 sm:p-6 hover-lift">
-                        <div class="text-2xl sm:text-3xl font-bold text-gradient-creative mb-2">200+</div>
-                        <div class="text-sm sm:text-base" style="color: var(--text-secondary);">مشروع مكتمل</div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 hover:scale-105 transition-transform duration-300">
+                        <div class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">200+</div>
+                        <div class="text-sm sm:text-base text-slate-300">مشروع مكتمل</div>
                     </div>
-                    <div class="glass-effect rounded-2xl p-4 sm:p-6 hover-lift">
-                        <div class="text-2xl sm:text-3xl font-bold text-gradient-creative mb-2">100+</div>
-                        <div class="text-sm sm:text-base" style="color: var(--text-secondary);">عميل راضي</div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 hover:scale-105 transition-transform duration-300">
+                        <div class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">100+</div>
+                        <div class="text-sm sm:text-base text-slate-300">عميل راضي</div>
                     </div>
                 </div>
                 
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center btn-spacing space-y-4 sm:space-y-0" data-aos="fade-up" data-aos-delay="600">
-                    <a href="#contact" class="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-gray-900 hover:scale-105 transition-all duration-300">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 space-y-4 sm:space-y-0" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#contact" class="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-slate-900 hover:scale-105 transition-all duration-300">
                         <i data-lucide="download" class="w-5 h-5 ml-2"></i>
                         تحميل السيرة الذاتية
                     </a>
-                    <a href="#portfolio" class="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    <a href="#portfolio" class="inline-flex items-center px-8 py-4 bg-white text-slate-900 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
                         <i data-lucide="eye" class="w-5 h-5 ml-2"></i>
                         شاهد أعمالي
                     </a>
                 </div>
                 
                 <!-- Scroll Indicator -->
-                <div class="absolute bottom-8 right-1/2 transform translate-x-1/2" data-aos="fade-up" data-aos-delay="800">
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2" data-aos="fade-up" data-aos-delay="800">
                     <div class="flex flex-col items-center">
                         <span class="text-white/60 text-sm mb-2">اكتشف المزيد</span>
                         <i data-lucide="chevron-down" class="w-6 h-6 text-white animate-bounce"></i>
@@ -587,38 +146,34 @@
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <!-- Magical Background -->
+        <!-- Background Elements -->
         <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(99,102,241,0.15),transparent_50%)] animate-pulse"></div>
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(6,182,212,0.15),transparent_50%)] animate-pulse" style="animation-delay: 3s;"></div>
-            <div class="floating-orb absolute top-20 right-32 w-36 h-36 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-2xl animate-float"></div>
-            <div class="floating-orb absolute bottom-20 left-32 w-28 h-28 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-2xl animate-float-delayed"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.15),transparent_50%)] animate-pulse"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(6,182,212,0.15),transparent_50%)] animate-pulse" style="animation-delay: 3s;"></div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <!-- Header Section -->
+            <!-- Header -->
             <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mb-8 pulse-glow">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-8 shadow-lg">
                     <i data-lucide="user" class="w-10 h-10 text-white"></i>
                 </div>
                 <h2 class="text-5xl font-bold text-white mb-6">
-                    نبذة <span class="text-gradient-primary magical-text">شخصية</span>
+                    نبذة <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">شخصية</span>
                 </h2>
                 <p class="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
                     شغف بالإبداع وحب للتميز في عالم التصميم الرقمي
                 </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto mt-8"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mt-8"></div>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
                 <!-- Profile Image Section -->
                 <div data-aos="fade-right" data-aos-duration="1000">
                     <div class="relative group">
-                        <!-- Main Image Container -->
                         <div class="relative w-full max-w-lg mx-auto">
-                            <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-3xl p-8 transform group-hover:scale-105 transition-all duration-500">
-                                <!-- Glow Effect -->
-                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                            <div class="relative bg-slate-800/80 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 transform group-hover:scale-105 transition-all duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                                 
                                 <!-- Profile Image -->
                                 <div class="relative">
@@ -637,10 +192,10 @@
                             </div>
                             
                             <!-- Floating Elements -->
-                            <div class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl pulse-glow">
+                            <div class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
                                 <i data-lucide="palette" class="w-8 h-8 text-white"></i>
                             </div>
-                            <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-2xl pulse-glow" style="animation-delay: 1s;">
+                            <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse" style="animation-delay: 1s;">
                                 <i data-lucide="zap" class="w-6 h-6 text-white"></i>
                             </div>
                         </div>
@@ -652,7 +207,7 @@
                     <!-- Main Title -->
                     <div class="mb-8">
                         <h3 class="text-4xl font-bold text-white mb-4">
-                            مصمم غرافيك <span class="text-gradient-secondary">محترف</span>
+                            مصمم غرافيك <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">محترف</span>
                         </h3>
                         <p class="text-slate-300 text-lg leading-relaxed">
                             أعمل في مجال التصميم الغرافيكي منذ أكثر من 5 سنوات، متخصص في تصميم الهويات البصرية والموشن غرافيك. أسعى دائماً لتقديم حلول إبداعية تحقق أهداف عملائي.
@@ -663,8 +218,8 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                         <!-- Info Card 1 -->
                         <div class="group cursor-pointer">
-                            <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
-                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                            <div class="bg-slate-800/80 backdrop-blur-xl border border-blue-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-3">
                                         <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center">
@@ -681,7 +236,7 @@
                         
                         <!-- Info Card 2 -->
                         <div class="group cursor-pointer">
-                            <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
+                            <div class="bg-slate-800/80 backdrop-blur-xl border border-cyan-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
                                 <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-3">
@@ -699,7 +254,7 @@
                         
                         <!-- Info Card 3 -->
                         <div class="group cursor-pointer">
-                            <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
+                            <div class="bg-slate-800/80 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
                                 <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-3">
@@ -717,7 +272,7 @@
                         
                         <!-- Info Card 4 -->
                         <div class="group cursor-pointer">
-                            <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-green-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
+                            <div class="bg-slate-800/80 backdrop-blur-xl border border-green-500/30 rounded-2xl p-6 transform group-hover:scale-105 transition-all duration-300">
                                 <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                                 <div class="relative z-10">
                                     <div class="flex items-center justify-between mb-3">
@@ -737,12 +292,12 @@
                     <!-- Languages Section -->
                     <div class="mb-8">
                         <h4 class="text-2xl font-bold text-white mb-6 flex items-center">
-                            <i data-lucide="globe" class="w-6 h-6 ml-3 text-indigo-400"></i>
+                            <i data-lucide="globe" class="w-6 h-6 ml-3 text-blue-400"></i>
                             اللغات
                         </h4>
                         <div class="space-y-4">
                             <!-- Kurdish -->
-                            <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
+                            <div class="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
                                 <div class="flex justify-between items-center mb-2">
                                     <div class="flex items-center gap-2">
                                         <div class="flex gap-1">
@@ -759,7 +314,7 @@
                             </div>
                             
                             <!-- Arabic -->
-                            <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
+                            <div class="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
                                 <div class="flex justify-between items-center mb-2">
                                     <div class="flex items-center gap-2">
                                         <div class="flex gap-1">
@@ -776,7 +331,7 @@
                             </div>
                             
                             <!-- English -->
-                            <div class="bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
+                            <div class="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
                                 <div class="flex justify-between items-center mb-2">
                                     <div class="flex items-center gap-2">
                                         <div class="flex gap-1">
@@ -796,8 +351,8 @@
                     
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                            <div class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div class="relative z-10 flex items-center justify-center">
                                 <i data-lucide="download" class="w-5 h-5 ml-2"></i>
                                 تحميل السيرة الذاتية
@@ -818,828 +373,237 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 gradient-ocean relative">
-        <div class="container mx-auto px-6 relative">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4" style="color: var(--text-primary);">مهاراتي التقنية</h2>
-                <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
-                    خبرة واسعة في أدوات التصميم المختلفة مع التركيز على الجودة والإبداع
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-8" style="color: var(--text-primary);">برامج التصميم</h3>
-                    <div class="space-y-6">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold" style="color: var(--text-primary);">Adobe Photoshop</span>
-                                <span style="color: var(--primary);">80%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="80"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Adobe Illustrator</span>
-                                <span class="text-pink-300">80%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="80"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Adobe InDesign</span>
-                                <span class="text-pink-300">80%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="80"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Adobe After Effects</span>
-                                <span class="text-pink-300">60%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="60"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Adobe Premiere Pro</span>
-                                <span class="text-pink-300">75%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-white mb-8">أدوات أخرى</h3>
-                    <div class="space-y-6">
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Figma</span>
-                                <span class="text-pink-300">75%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="75"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">CapCut</span>
-                                <span class="text-pink-300">80%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="80"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">Adobe Dimension 3D</span>
-                                <span class="text-pink-300">75%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="75"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">إدارة السوشل ميديا</span>
-                                <span class="text-pink-300">90%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="90"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-2">
-                                <span class="font-semibold text-white">UI/UX Design</span>
-                                <span class="text-pink-300">70%</span>
-                            </div>
-                            <div class="bg-white/20 rounded-full h-3">
-                                <div class="skill-bar h-3 rounded-full" data-width="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-20 relative" style="background-color: var(--background);">
-        <div class="container mx-auto px-6 relative">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-gradient-creative mb-4">خدماتي</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">
-                    أقدم مجموعة شاملة من الخدمات الإبداعية لتلبية احتياجاتك التسويقية والبصرية
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 gradient-sunset rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="palette" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">تصميم الهويات البصرية</h3>
-                    <p class="text-gray-300 mb-6">تصميم شعارات وهويات بصرية متكاملة تعكس شخصية علامتك التجارية</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• تصميم الشعارات</li>
-                        <li>• دليل الهوية البصرية</li>
-                        <li>• تطبيقات الهوية</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 gradient-cool rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="image" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">تصميم المطبوعات</h3>
-                    <p class="text-gray-300 mb-6">تصميم جميع أنواع المطبوعات الإعلانية والتسويقية بجودة عالية</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• البروشورات والكتيبات</li>
-                        <li>• الفلايرات والبوسترات</li>
-                        <li>• أغلفة الكتب والمجلات</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 gradient-warm rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="play" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">الموشن غرافيك</h3>
-                    <p class="text-gray-300 mb-6">إنتاج فيديوهات موشن غرافيك احترافية للحملات الإعلانية</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• مقدمات وخواتم الفيديو</li>
-                        <li>• الإعلانات المتحركة</li>
-                        <li>• الإنفوغرافيك المتحرك</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 gradient-ocean rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="share-2" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">السوشل ميديا</h3>
-                    <p class="text-gray-300 mb-6">تصميم وإدارة المحتوى البصري لمنصات التواصل الاجتماعي</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• تصميم البوسترات</li>
-                        <li>• إدارة الصفحات</li>
-                        <li>• الحملات الإعلانية</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-16 h-16 gradient-sunset rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="monitor" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">UI/UX Design</h3>
-                    <p class="text-gray-300 mb-6">تصميم واجهات المستخدم وتجربة المستخدم للمواقع والتطبيقات</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• تصميم واجهات الويب</li>
-                        <li>• تصميم التطبيقات</li>
-                        <li>• دراسة تجربة المستخدم</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="glass-effect rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-16 h-16 gradient-cool rounded-2xl flex items-center justify-center mb-6">
-                        <i data-lucide="video" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">تحرير الفيديو</h3>
-                    <p class="text-gray-300 mb-6">تحرير وتجميع الفيديوهات الاحترافية للمشاريع المختلفة</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• تحرير الفيديوهات</li>
-                        <li>• المونتاج الاحترافي</li>
-                        <li>• المؤثرات البصرية</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <!-- Magical Background -->
+    <section id="skills" class="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-slate-900 relative overflow-hidden">
+        <!-- Background Elements -->
         <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.15),transparent_50%)] animate-pulse"></div>
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(6,182,212,0.15),transparent_50%)] animate-pulse" style="animation-delay: 2s;"></div>
-            <div class="floating-orb absolute top-32 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-2xl animate-float"></div>
-            <div class="floating-orb absolute bottom-32 left-20 w-32 h-32 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-2xl animate-float-delayed"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(59,130,246,0.2),transparent_50%)] animate-pulse"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(139,92,246,0.2),transparent_50%)] animate-pulse" style="animation-delay: 2s;"></div>
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <!-- Header Section -->
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mb-8 pulse-glow">
-                    <i data-lucide="briefcase" class="w-10 h-10 text-white"></i>
-                </div>
-                <h2 class="text-5xl font-bold text-white mb-6">
-                    معرض <span class="text-gradient-primary magical-text">الإبداع</span>
-                </h2>
-                <p class="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
-                    رحلة بصرية عبر أفضل أعمالي في التصميم الغرافيكي والموشن غرافيك
-                </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto mt-8"></div>
-            </div>
-            
-            <!-- 3D Filter Navigation -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
-                <button class="portfolio-filter active group relative px-8 py-4 bg-gradient-to-r from-indigo-500/20 to-purple-600/20 backdrop-blur-xl border border-indigo-500/30 rounded-2xl text-white font-semibold hover:scale-105 transition-all duration-300" data-filter="all">
-                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span class="relative z-10">جميع الأعمال</span>
-                </button>
-                <button class="portfolio-filter group relative px-8 py-4 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl text-slate-300 font-semibold hover:scale-105 hover:text-white transition-all duration-300" data-filter="branding">
-                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span class="relative z-10">الهويات البصرية</span>
-                </button>
-                <button class="portfolio-filter group relative px-8 py-4 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl text-slate-300 font-semibold hover:scale-105 hover:text-white transition-all duration-300" data-filter="print">
-                    <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-orange-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span class="relative z-10">المطبوعات</span>
-                </button>
-                <button class="portfolio-filter group relative px-8 py-4 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl text-slate-300 font-semibold hover:scale-105 hover:text-white transition-all duration-300" data-filter="motion">
-                    <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span class="relative z-10">الموشن غرافيك</span>
-                </button>
-                <button class="portfolio-filter group relative px-8 py-4 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl text-slate-300 font-semibold hover:scale-105 hover:text-white transition-all duration-300" data-filter="social">
-                    <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span class="relative z-10">السوشل ميديا</span>
-                </button>
-            </div>
-            
-            <!-- 3D Portfolio Grid -->
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-                
-                <!-- Portfolio Card 1 -->
-                <div class="portfolio-item branding group cursor-pointer" data-aos="flip-left" data-aos-delay="100">
-                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-3xl overflow-hidden transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop" alt="هوية بصرية" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            
-                            <!-- Floating Category Badge -->
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold rounded-full">
-                                هوية بصرية
-                            </div>
-                            
-                            <!-- Overlay Actions -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                                <div class="flex gap-3">
-                                    <button class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-300">
-                                        <i data-lucide="eye" class="w-5 h-5 text-white"></i>
-                                    </button>
-                                    <button class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-300">
-                                        <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors duration-300">
-                                هوية بصرية متكاملة
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                تصميم هوية بصرية شاملة لشركة تقنية ناشئة مع التركيز على الحداثة والابتكار
-                            </p>
-                            
-                            <!-- Tech Stack -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs rounded-full">Illustrator</span>
-                                <span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Photoshop</span>
-                                <span class="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">InDesign</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Card 2 -->
-                <div class="portfolio-item motion group cursor-pointer" data-aos="flip-up" data-aos-delay="200">
-                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl overflow-hidden transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=300&fit=crop" alt="موشن غرافيك" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            
-                            <!-- Play Button Overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <i data-lucide="play" class="w-8 h-8 text-white ml-1"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- Floating Category Badge -->
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold rounded-full">
-                                موشن غرافيك
-                            </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                                فيديو موشن غرافيك
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                إعلان متحرك احترافي لحملة تسويقية رقمية مع تأثيرات بصرية متقدمة
-                            </p>
-                            
-                            <!-- Tech Stack -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full">After Effects</span>
-                                <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Premiere</span>
-                                <span class="px-2 py-1 bg-teal-500/20 text-teal-300 text-xs rounded-full">Cinema 4D</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Card 3 -->
-                <div class="portfolio-item print group cursor-pointer" data-aos="flip-right" data-aos-delay="300">
-                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-amber-500/30 rounded-3xl overflow-hidden transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop" alt="بروشور" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            
-                            <!-- Floating Category Badge -->
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-bold rounded-full">
-                                مطبوعات
-                            </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors duration-300">
-                                تصميم بروشور
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                بروشور إعلاني أنيق لشركة عقارية مع تصميم عصري وألوان جذابة
-                            </p>
-                            
-                            <!-- Tech Stack -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-amber-500/20 text-amber-300 text-xs rounded-full">InDesign</span>
-                                <span class="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">Photoshop</span>
-                                <span class="px-2 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded-full">Illustrator</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Card 4 -->
-                <div class="portfolio-item social group cursor-pointer" data-aos="flip-left" data-aos-delay="400">
-                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-pink-500/30 rounded-3xl overflow-hidden transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop" alt="سوشل ميديا" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            
-                            <!-- Floating Category Badge -->
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-bold rounded-full">
-                                سوشل ميديا
-                            </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors duration-300">
-                                حملة سوشل ميديا
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                تصاميم متنوعة وجذابة لحملة إعلانية شاملة عبر منصات التواصل الاجتماعي
-                            </p>
-                            
-                            <!-- Tech Stack -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">Photoshop</span>
-                                <span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Canva</span>
-                                <span class="px-2 py-1 bg-rose-500/20 text-rose-300 text-xs rounded-full">Figma</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Card 5 -->
-                <div class="portfolio-item branding group cursor-pointer" data-aos="flip-up" data-aos-delay="500">
-                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-green-500/30 rounded-3xl overflow-hidden transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=300&fit=crop" alt="شعار" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            
-                            <!-- Floating Category Badge -->
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold rounded-full">
-                                شعار
-                            </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors duration-300">
-                                تصميم شعار
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                شعار احترافي ومميز لمطعم عربي أصيل يعكس التراث والحداثة
-                            </p>
-                            
-                            <!-- Tech Stack -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">Illustrator</span>
-                                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Photoshop</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Card 6 -->
-                <div class="portfolio-item motion group cursor-pointer" data-aos="flip-right" data-aos-delay="600">
-                    <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-violet-500/30 rounded-3xl overflow-hidden transform hover:scale-105 hover:rotate-1 transition-all duration-500">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="إنفوغرافيك" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                            
-                            <!-- Play Button Overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <i data-lucide="play" class="w-8 h-8 text-white ml-1"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- Floating Category Badge -->
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-violet-500 to-purple-600 text-white text-xs font-bold rounded-full">
-                                إنفوغرافيك
-                            </div>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors duration-300">
-                                إنفوغرافيك متحرك
-                            </h3>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                                عرض البيانات والإحصائيات بطريقة تفاعلية وجذابة بصرياً
-                            </p>
-                            
-                            <!-- Tech Stack -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs rounded-full">After Effects</span>
-                                <span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Illustrator</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Call to Action -->
-            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="700">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mb-6 pulse-glow">
-                    <i data-lucide="arrow-down" class="w-8 h-8 text-white animate-bounce"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4">هل أعجبتك أعمالي؟</h3>
-                <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
-                    دعنا نتعاون لتحويل أفكارك إلى تصاميم استثنائية تترك أثراً لا يُنسى
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                        <i data-lucide="message-circle" class="w-5 h-5 ml-2"></i>
-                        ابدأ مشروعك الآن
-                    </button>
-                    <button class="inline-flex items-center px-8 py-4 bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 text-white rounded-2xl font-semibold hover:bg-slate-700/50 hover:scale-105 transition-all duration-300">
-                        <i data-lucide="download" class="w-5 h-5 ml-2"></i>
-                        تحميل البورتفوليو
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <!-- Animated Background -->
-        <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)] animate-pulse"></div>
-            <div class="absolute top-0 left-0 w-full h-full">
-                <div class="floating-orb absolute -top-10 left-10 w-32 h-32 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-xl animate-float"></div>
-                <div class="floating-orb absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-xl animate-float-delayed"></div>
-                <div class="floating-orb absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-full blur-xl animate-float-slow"></div>
-            </div>
-        </div>
-        
-        <div class="container mx-auto px-6 relative z-10">
+            <!-- Header -->
             <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mb-8 shadow-lg animate-pulse">
+                    <i data-lucide="code" class="w-10 h-10 text-white"></i>
+                </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    رحلة <span class="text-gradient-primary magical-text">الخبرات</span>
+                    مهاراتي <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">التقنية</span>
                 </h2>
                 <p class="text-slate-300 text-lg max-w-2xl mx-auto">
-                    مسيرة مهنية حافلة بالإنجازات والتطوير المستمر
+                    خبرة واسعة في أدوات التصميم المختلفة مع التركيز على الجودة والإبداع
                 </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mx-auto mt-8"></div>
             </div>
-
-            <!-- 3D Timeline Container -->
-            <div class="relative max-w-7xl mx-auto perspective-1000">
-                <!-- Magical Central Spine -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 w-2 h-full">
-                    <div class="w-full h-full bg-gradient-to-b from-indigo-500 via-cyan-400 to-amber-500 rounded-full relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent animate-pulse"></div>
-                        <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] animate-shimmer"></div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Design Software -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="bg-slate-800/50 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                            <i data-lucide="palette" class="w-8 h-8 ml-3 text-purple-400"></i>
+                            برامج التصميم
+                        </h3>
+                        <div class="space-y-6">
+                            <!-- Adobe Photoshop -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="image" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-blue-400 transition-colors">Adobe Photoshop</span>
+                                    </div>
+                                    <span class="text-blue-400 font-bold">80%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-blue-500 to-cyan-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="80"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Adobe Illustrator -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="pen-tool" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-orange-400 transition-colors">Adobe Illustrator</span>
+                                    </div>
+                                    <span class="text-orange-400 font-bold">80%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-orange-500 to-red-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="80"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Adobe InDesign -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="file-text" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-pink-400 transition-colors">Adobe InDesign</span>
+                                    </div>
+                                    <span class="text-pink-400 font-bold">80%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-pink-500 to-purple-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="80"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Adobe After Effects -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-purple-400 transition-colors">Adobe After Effects</span>
+                                    </div>
+                                    <span class="text-purple-400 font-bold">60%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-purple-500 to-indigo-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="60"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Adobe Premiere Pro -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="video" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-indigo-400 transition-colors">Adobe Premiere Pro</span>
+                                    </div>
+                                    <span class="text-indigo-400 font-bold">75%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-indigo-500 to-blue-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Experience Cards -->
-                <div class="space-y-24">
-                    <!-- Experience 1 - Floating Right -->
-                    <div class="relative" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="flex items-center">
-                            <div class="w-1/2 pr-12">
-                                <div class="experience-card-3d group cursor-pointer transform hover:scale-105 transition-all duration-500">
-                                    <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-3xl p-8 relative overflow-hidden">
-                                        <!-- Card Glow Effect -->
-                                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        
-                                        <!-- Floating Date Badge -->
-                                        <div class="absolute -top-1 -right-1 transform rotate-12 group-hover:rotate-0 transition-transform duration-500 z-10">
-                                            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-lg">
-                                                2023 - الآن
-                                            </div>
+                <!-- Other Tools -->
+                <div data-aos="fade-left" data-aos-duration="1000">
+                    <div class="bg-slate-800/50 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                            <i data-lucide="tool" class="w-8 h-8 ml-3 text-cyan-400"></i>
+                            أدوات أخرى
+                        </h3>
+                        <div class="space-y-6">
+                            <!-- Figma -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="figma" class="w-5 h-5 text-white"></i>
                                         </div>
-                                        
-                                        <!-- Content -->
-                                        <div class="relative z-10 text-right">
-                                            <div class="flex items-center justify-end mb-4">
-                                                <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center ml-4 group-hover:rotate-12 transition-transform duration-500">
-                                                    <i data-lucide="crown" class="w-6 h-6 text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-indigo-400 transition-colors duration-300">
-                                                        مصمم جرافيك أول
-                                                    </h3>
-                                                    <p class="text-indigo-400 font-medium">شركة الإبداع الرقمي</p>
-                                                </div>
-                                            </div>
-                                            <p class="text-slate-300 leading-relaxed">
-                                                قيادة فريق التصميم وتطوير الهوية البصرية للعلامات التجارية الكبرى مع التركيز على الابتكار والإبداع
-                                            </p>
-                                            
-                                            <!-- Skills Tags -->
-                                            <div class="flex flex-wrap justify-end gap-2 mt-4">
-                                                <span class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-xs">قيادة الفريق</span>
-                                                <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-xs">الهوية البصرية</span>
-                                                <span class="bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-xs">الإبداع</span>
-                                            </div>
-                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-green-400 transition-colors">Figma</span>
                                     </div>
+                                    <span class="text-green-400 font-bold">75%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-green-500 to-teal-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="75"></div>
                                 </div>
                             </div>
                             
-                            <!-- 3D Timeline Node -->
-                            <div class="absolute left-1/2 transform -translate-x-1/2 z-20">
-                                <div class="relative">
-                                    <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full border-4 border-slate-900 shadow-2xl relative overflow-hidden group-hover:scale-125 transition-transform duration-300">
-                                        <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent animate-spin-slow"></div>
-                                    </div>
-                                    <!-- Pulsing Ring -->
-                                    <div class="absolute inset-0 w-8 h-8 border-2 border-indigo-400 rounded-full animate-ping opacity-20"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="w-1/2 pl-12"></div>
-                        </div>
-                    </div>
-
-                    <!-- Experience 2 - Floating Left -->
-                    <div class="relative" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="flex items-center">
-                            <div class="w-1/2 pr-12"></div>
-                            
-                            <!-- 3D Timeline Node -->
-                            <div class="absolute left-1/2 transform -translate-x-1/2 z-20">
-                                <div class="relative">
-                                    <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full border-4 border-slate-900 shadow-2xl relative overflow-hidden group-hover:scale-125 transition-transform duration-300">
-                                        <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent animate-spin-slow"></div>
-                                    </div>
-                                    <!-- Pulsing Ring -->
-                                    <div class="absolute inset-0 w-8 h-8 border-2 border-cyan-400 rounded-full animate-ping opacity-20"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="w-1/2 pl-12">
-                                <div class="experience-card-3d group cursor-pointer transform hover:scale-105 transition-all duration-500">
-                                    <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 relative overflow-hidden">
-                                        <!-- Card Glow Effect -->
-                                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        
-                                        <!-- Floating Date Badge -->
-                                        <div class="absolute -top-1 -left-1 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500 z-10">
-                                            <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-lg">
-                                                2021 - 2023
-                                            </div>
+                            <!-- CapCut -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="scissors" class="w-5 h-5 text-white"></i>
                                         </div>
-                                        
-                                        <!-- Content -->
-                                        <div class="relative z-10">
-                                            <div class="flex items-center mb-4">
-                                                <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-500">
-                                                    <i data-lucide="palette" class="w-6 h-6 text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
-                                                        مصمم جرافيك
-                                                    </h3>
-                                                    <p class="text-cyan-400 font-medium">استوديو التصميم المتقدم</p>
-                                                </div>
-                                            </div>
-                                            <p class="text-slate-300 leading-relaxed">
-                                                تصميم المواد التسويقية والإعلانية للشركات المحلية والدولية مع التركيز على الجودة والإبداع
-                                            </p>
-                                            
-                                            <!-- Skills Tags -->
-                                            <div class="flex flex-wrap gap-2 mt-4">
-                                                <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-xs">التسويق البصري</span>
-                                                <span class="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs">الإعلان</span>
-                                                <span class="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-xs">العلامات التجارية</span>
-                                            </div>
-                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-yellow-400 transition-colors">CapCut</span>
                                     </div>
+                                    <span class="text-yellow-400 font-bold">80%</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Experience 3 - Floating Right -->
-                    <div class="relative" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="flex items-center">
-                            <div class="w-1/2 pr-12">
-                                <div class="experience-card-3d group cursor-pointer transform hover:scale-105 transition-all duration-500">
-                                    <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-amber-500/30 rounded-3xl p-8 relative overflow-hidden">
-                                        <!-- Card Glow Effect -->
-                                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        
-                                        <!-- Floating Date Badge -->
-                                        <div class="absolute -top-1 -right-1 transform rotate-12 group-hover:rotate-0 transition-transform duration-500 z-10">
-                                            <div class="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 rounded-2xl text-sm font-bold shadow-lg">
-                                                2019 - 2021
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Content -->
-                                        <div class="relative z-10 text-right">
-                                            <div class="flex items-center justify-end mb-4">
-                                                <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center ml-4 group-hover:rotate-12 transition-transform duration-500">
-                                                    <i data-lucide="star" class="w-6 h-6 text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors duration-300">
-                                                        مصمم مبتدئ
-                                                    </h3>
-                                                    <p class="text-amber-400 font-medium">وكالة الإبداع الشامل</p>
-                                                </div>
-                                            </div>
-                                            <p class="text-slate-300 leading-relaxed">
-                                                بداية المسيرة المهنية في عالم التصميم الجرافيكي مع التعلم المستمر وبناء الأساسات القوية
-                                            </p>
-                                            
-                                            <!-- Skills Tags -->
-                                            <div class="flex flex-wrap justify-end gap-2 mt-4">
-                                                <span class="bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full text-xs">التعلم</span>
-                                                <span class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full text-xs">الأساسيات</span>
-                                                <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-xs">النمو</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-yellow-500 to-orange-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="80"></div>
                                 </div>
                             </div>
                             
-                            <!-- 3D Timeline Node -->
-                            <div class="absolute left-1/2 transform -translate-x-1/2 z-20">
-                                <div class="relative">
-                                    <div class="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full border-4 border-slate-900 shadow-2xl relative overflow-hidden group-hover:scale-125 transition-transform duration-300">
-                                        <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent animate-spin-slow"></div>
+                            <!-- Adobe Dimension 3D -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="box" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-teal-400 transition-colors">Adobe Dimension 3D</span>
                                     </div>
-                                    <!-- Pulsing Ring -->
-                                    <div class="absolute inset-0 w-8 h-8 border-2 border-amber-400 rounded-full animate-ping opacity-20"></div>
+                                    <span class="text-teal-400 font-bold">75%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-teal-500 to-cyan-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="75"></div>
                                 </div>
                             </div>
                             
-                            <div class="w-1/2 pl-12"></div>
+                            <!-- Social Media Management -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="share-2" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-rose-400 transition-colors">إدارة السوشل ميديا</span>
+                                    </div>
+                                    <span class="text-rose-400 font-bold">90%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-rose-500 to-pink-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="90"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- UI/UX Design -->
+                            <div class="skill-item group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl flex items-center justify-center mr-3">
+                                            <i data-lucide="monitor" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <span class="font-semibold text-white group-hover:text-violet-400 transition-colors">UI/UX Design</span>
+                                    </div>
+                                    <span class="text-violet-400 font-bold">70%</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-full h-3 overflow-hidden">
+                                    <div class="skill-bar bg-gradient-to-r from-violet-500 to-purple-500 h-full rounded-full transform origin-right scale-x-0 transition-transform duration-1000 ease-out" data-width="70"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Education Section with Magical Cards -->
-            <div class="mt-32" data-aos="fade-up" data-aos-duration="1000">
-                <h3 class="text-4xl font-bold text-white text-center mb-16">
-                    التحصيل <span class="text-gradient-secondary magical-text">العلمي</span>
-                </h3>
-                
-                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                    <!-- Education Card 1 -->
-                    <div class="education-card-3d group cursor-pointer" data-aos="flip-left">
-                        <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-indigo-500/30 rounded-3xl p-8 relative overflow-hidden transform hover:scale-105 transition-all duration-500">
-                            <!-- Magical Background -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <!-- Floating Icon -->
-                            <div class="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-2xl z-10">
-                                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+            
+            <!-- Skills Summary -->
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-slate-800/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-6">ملخص المهارات</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="palette" class="w-8 h-8 text-white"></i>
                             </div>
-                            
-                            <div class="relative z-10 text-right">
-                                <div class="mb-6">
-                                    <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors duration-300">
-                                        بكالوريوس فنون جميلة
-                                    </h4>
-                                    <p class="text-indigo-400 font-medium mb-2">جامعة الفنون التطبيقية</p>
-                                    <p class="text-slate-400 text-sm">2015 - 2019</p>
-                                </div>
-                                <p class="text-slate-300 leading-relaxed mb-4">
-                                    تخصص التصميم الجرافيكي مع التركيز على الأسس النظرية والتطبيقية للتصميم البصري
-                                </p>
-                                
-                                <!-- Achievement Badge -->
-                                <div class="inline-flex items-center bg-indigo-500/20 text-indigo-300 px-4 py-2 rounded-full text-sm">
-                                    <i data-lucide="award" class="w-4 h-4 ml-2"></i>
-                                    امتياز مع مرتبة الشرف
-                                </div>
-                            </div>
+                            <h4 class="text-lg font-semibold text-white mb-2">التصميم الإبداعي</h4>
+                            <p class="text-slate-300 text-sm">خبرة في تصميم الهويات البصرية والمطبوعات</p>
                         </div>
-                    </div>
-                    
-                    <!-- Education Card 2 -->
-                    <div class="education-card-3d group cursor-pointer" data-aos="flip-right">
-                        <div class="card-inner bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 relative overflow-hidden transform hover:scale-105 transition-all duration-500">
-                            <!-- Magical Background -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            <!-- Floating Icon -->
-                            <div class="absolute -top-2 -left-2 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center transform -rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-2xl z-10">
-                                <i data-lucide="award" class="w-8 h-8 text-white"></i>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="zap" class="w-8 h-8 text-white"></i>
                             </div>
-                            
-                            <div class="relative z-10">
-                                <div class="mb-6">
-                                    <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                                        شهادات احترافية
-                                    </h4>
-                                    <p class="text-cyan-400 font-medium mb-2">معاهد التدريب المتخصصة</p>
-                                    <p class="text-slate-400 text-sm">2020 - 2024</p>
-                                </div>
-                                <p class="text-slate-300 leading-relaxed mb-4">
-                                    شهادات معتمدة في Adobe Creative Suite و UI/UX Design مع التطوير المستمر للمهارات
-                                </p>
-                                
-                                <!-- Certificates List -->
-                                <div class="space-y-2">
-                                    <div class="flex items-center text-sm text-slate-300">
-                                        <div class="w-2 h-2 bg-cyan-400 rounded-full ml-3"></div>
-                                        Adobe Certified Expert
-                                    </div>
-                                    <div class="flex items-center text-sm text-slate-300">
-                                        <div class="w-2 h-2 bg-blue-400 rounded-full ml-3"></div>
-                                        UI/UX Design Professional
-                                    </div>
-                                    <div class="flex items-center text-sm text-slate-300">
-                                        <div class="w-2 h-2 bg-teal-400 rounded-full ml-3"></div>
-                                        Motion Graphics Specialist
-                                    </div>
-                                </div>
+                            <h4 class="text-lg font-semibold text-white mb-2">الموشن غرافيك</h4>
+                            <p class="text-slate-300 text-sm">إنتاج فيديوهات متحركة وتأثيرات بصرية</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="monitor" class="w-8 h-8 text-white"></i>
                             </div>
+                            <h4 class="text-lg font-semibold text-white mb-2">التصميم الرقمي</h4>
+                            <p class="text-slate-300 text-sm">واجهات المستخدم وتجربة المستخدم</p>
                         </div>
                     </div>
                 </div>
@@ -1647,295 +611,16 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 gradient-creative relative">
-        <div class="container mx-auto px-6 relative">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-white mb-4">تواصل معي</h2>
-                <p class="text-white/80 max-w-2xl mx-auto">
-                    هل لديك مشروع في ذهنك؟ دعنا نتحدث ونحول أفكارك إلى تصاميم مذهلة
-                </p>
-            </div>
-            
-            <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Contact Info -->
-                    <div class="lg:col-span-1 space-y-6" data-aos="fade-right">
-                        <!-- Location Card -->
-                        <div class="glass-effect rounded-2xl p-6 hover-lift">
-                            <div class="w-14 h-14 gradient-sunset rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="map-pin" class="w-7 h-7 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 text-right">الموقع</h3>
-                            <p class="text-white/80 text-right">سوريا - القامشلي</p>
-                        </div>
-                        
-                        <!-- Phone Card -->
-                        <div class="glass-effect rounded-2xl p-6 hover-lift">
-                            <div class="w-14 h-14 gradient-cool rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="phone" class="w-7 h-7 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 text-right">الهاتف</h3>
-                            <p class="text-white/80 text-right" dir="ltr">+963 XXX XXX XXX</p>
-                        </div>
-                        
-                        <!-- Email Card -->
-                        <div class="glass-effect rounded-2xl p-6 hover-lift">
-                            <div class="w-14 h-14 gradient-warm rounded-xl flex items-center justify-center mb-4">
-                                <i data-lucide="mail" class="w-7 h-7 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2 text-right">البريد الإلكتروني</h3>
-                            <p class="text-white/80 text-right" dir="ltr">mohammed.othman@email.com</p>
-                        </div>
-                        
-                        <!-- Social Links -->
-                        <div class="glass-effect rounded-2xl p-6 hover-lift">
-                            <h3 class="text-xl font-bold text-white mb-4">تابعني على</h3>
-                            <div class="flex btn-spacing justify-start">
-                                <a href="#" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center hover:bg-green-500 hover:scale-110 transition-all duration-300">
-                                    <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300">
-                                    <i data-lucide="linkedin" class="w-5 h-5 text-white"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center hover:bg-pink-500 hover:scale-110 transition-all duration-300">
-                                    <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:scale-110 transition-all duration-300">
-                                    <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Contact Form -->
-                    <div class="lg:col-span-2" data-aos="fade-left">
-                        <div class="glass-effect rounded-2xl p-8">
-                            <h3 class="text-2xl font-bold text-white mb-6">أرسل رسالة</h3>
-                            
-                            <form class="space-y-6">
-                                <div class="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label class="block text-sm font-medium text-white/80 mb-2">الاسم الكامل</label>
-                                        <input type="text" placeholder="أدخل اسمك الكامل" 
-                                               class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-pink-400 focus:bg-white/20 transition-all duration-300">
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-white/80 mb-2">البريد الإلكتروني</label>
-                                        <input type="email" placeholder="أدخل بريدك الإلكتروني" 
-                                               class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-pink-400 focus:bg-white/20 transition-all duration-300">
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <label class="block text-sm font-medium text-white/80 mb-2">الموضوع</label>
-                                    <input type="text" placeholder="موضوع الرسالة" 
-                                           class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-pink-400 focus:bg-white/20 transition-all duration-300">
-                                </div>
-                                
-                                <div>
-                                    <label class="block text-sm font-medium text-white/80 mb-2">الرسالة</label>
-                                    <textarea rows="6" placeholder="اكتب رسالتك هنا..." 
-                                              class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-pink-400 focus:bg-white/20 transition-all duration-300 resize-none"></textarea>
-                                </div>
-                                
-                                <div class="flex items-center justify-between">
-                                    <button type="submit" 
-                                            class="inline-flex items-center px-8 py-3 bg-white text-gray-900 rounded-xl font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                                        إرسال الرسالة
-                                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                                    </button>
-                                    <div class="flex items-center btn-spacing text-white/60 text-sm">
-                                        <i data-lucide="shield-check" class="w-4 h-4 text-green-400"></i>
-                                        <span>معلوماتك آمنة وسرية</span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Placeholder for next section -->
+    <div class="min-h-screen bg-slate-800 flex items-center justify-center">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">المرحلة 3 مكتملة</h2>
+            <p class="text-slate-300 text-lg">تم إنشاء قسم "المهارات" بنجاح</p>
+            <p class="text-slate-400 mt-2">المرحلة التالية: قسم "الخدمات"</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="relative overflow-hidden" style="background-color: var(--background);">
-        <div class="container mx-auto px-6 py-16 relative">
-            <!-- Main Footer Content -->
-            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-12">
-                <!-- Brand Section -->
-                <div class="lg:col-span-2" data-aos="fade-up">
-                    <div class="flex items-center space-x-4 rtl:space-x-reverse mb-6">
-                        <div class="w-14 h-14 gradient-sunset rounded-2xl flex items-center justify-center shadow-lg">
-                            <i data-lucide="palette" class="w-7 h-7 text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gradient-creative">محمد عثمان</h3>
-                            <p class="text-gray-400 text-sm">مصمم غرافيك محترف</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
-                        متخصص في التصميم الغرافيكي والموشن غرافيك مع خبرة تزيد عن 5 سنوات في إنتاج تصاميم إبداعية تلبي احتياجات العملاء.
-                    </p>
-                    
-                    <!-- Social Links -->
-                    <div class="flex btn-spacing">
-                        <a href="#" class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-green-500 hover:scale-110 transition-all duration-300">
-                            <i data-lucide="message-circle" class="w-5 h-5 text-gray-300 hover:text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300">
-                            <i data-lucide="linkedin" class="w-5 h-5 text-gray-300 hover:text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-pink-500 hover:scale-110 transition-all duration-300">
-                            <i data-lucide="instagram" class="w-5 h-5 text-gray-300 hover:text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-blue-500 hover:scale-110 transition-all duration-300">
-                            <i data-lucide="facebook" class="w-5 h-5 text-gray-300 hover:text-white"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-lg font-semibold text-white mb-6">روابط سريعة</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-300 hover:text-pink-400 transition-colors duration-300">الرئيسية</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-pink-400 transition-colors duration-300">نبذة عني</a></li>
-                        <li><a href="#skills" class="text-gray-300 hover:text-pink-400 transition-colors duration-300">مهاراتي</a></li>
-                        <li><a href="#portfolio" class="text-gray-300 hover:text-pink-400 transition-colors duration-300">أعمالي</a></li>
-                        <li><a href="#experience" class="text-gray-300 hover:text-pink-400 transition-colors duration-300">خبراتي</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-pink-400 transition-colors duration-300">تواصل معي</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services -->
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-lg font-semibold text-white mb-6">خدماتي</h4>
-                    <ul class="space-y-3">
-                        <li><span class="text-gray-300">تصميم الهويات البصرية</span></li>
-                        <li><span class="text-gray-300">تصميم المطبوعات</span></li>
-                        <li><span class="text-gray-300">الموشن غرافيك</span></li>
-                        <li><span class="text-gray-300">إدارة السوشل ميديا</span></li>
-                        <li><span class="text-gray-300">UI/UX Design</span></li>
-                        <li><span class="text-gray-300">تحرير الفيديو</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-700 pt-8" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <p class="text-gray-400 text-sm">© 2024 محمد عثمان. جميع الحقوق محفوظة.</p>
-                    
-                    <!-- Back to Top -->
-                    <a href="#home" class="flex items-center btn-spacing text-gray-400 hover:text-pink-400 transition-colors duration-300">
-                        <span class="text-sm">العودة للأعلى</span>
-                        <div class="w-8 h-8 bg-gray-700/50 rounded-lg flex items-center justify-center hover:bg-pink-500/20 transition-all duration-300">
-                            <i data-lucide="arrow-up" class="w-4 h-4"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <!-- Scripts -->
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-        
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-gray-900/95');
-            } else {
-                navbar.classList.remove('bg-gray-900/95');
-            }
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Skills animation
-        const skillsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-bar');
-                    skillBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.classList.add('animate');
-                            bar.style.transform = `scaleX(${width / 100})`;
-                        }, 200);
-                    });
-                }
-            });
-        });
-        
-        const skillsSection = document.getElementById('skills');
-        if (skillsSection) {
-            skillsObserver.observe(skillsSection);
-        }
-        
-        // Portfolio Filter
-        const filterButtons = document.querySelectorAll('.portfolio-filter');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.getAttribute('data-filter');
-                
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Filter items
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.classList.contains(filter)) {
-                        item.style.display = 'block';
-                        item.style.animation = 'fadeIn 0.5s ease-in-out';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Add fadeIn animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; transform: scale(0.9); }
-                to { opacity: 1; transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
