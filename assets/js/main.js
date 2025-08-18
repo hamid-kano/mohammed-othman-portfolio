@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initSkillsAnimation();
     initPortfolioFilter();
+    initPortfolioItemsAnimation();
     initSmoothScrolling();
     initContactForm();
+    initContactInteractions();
+    initScrollToTop();
 });
 
 // Navigation functionality
@@ -122,19 +125,19 @@ function initPortfolioFilter() {
             
             // Update active button
             filterButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.classList.add('bg-slate-800/50', 'text-slate-300');
-                btn.classList.remove('bg-gradient-to-r', 'from-indigo-500', 'to-purple-600', 'text-white');
+                btn.classList.remove('active', 'bg-gradient-to-r', 'from-purple-500', 'to-blue-600', 'text-white');
+                btn.classList.add('bg-slate-800/50', 'backdrop-blur-xl', 'border', 'border-slate-700/50', 'text-slate-300');
             });
             
-            button.classList.add('active');
-            button.classList.remove('bg-slate-800/50', 'text-slate-300');
-            button.classList.add('bg-gradient-to-r', 'from-indigo-500', 'to-purple-600', 'text-white');
+            button.classList.add('active', 'bg-gradient-to-r', 'from-purple-500', 'to-blue-600', 'text-white');
+            button.classList.remove('bg-slate-800/50', 'backdrop-blur-xl', 'border', 'border-slate-700/50', 'text-slate-300');
             
             // Filter items with animation
             portfolioItems.forEach((item, index) => {
                 if (filter === 'all' || item.classList.contains(filter)) {
                     item.style.display = 'block';
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
@@ -170,11 +173,31 @@ function initSmoothScrolling() {
 
 // Contact form functionality
 function initContactForm() {
-    const contactForm = document.querySelector('#contact form');
+    const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
+        // Form validation
+        const inputs = contactForm.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateField);
+            input.addEventListener('input', clearErrors);
+        });
+        
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Validate all fields
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField.call(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                showNotification('يرجى تصحيح الأخطاء في النموذج', 'error');
+                return;
+            }
             
             // Get form data
             const formData = new FormData(this);
@@ -183,8 +206,9 @@ function initContactForm() {
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mr-2"></i>جاري الإرسال...';
+            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin ml-2"></i>جاري الإرسال...';
             submitBtn.disabled = true;
+            lucide.createIcons();
             
             // Simulate form submission (replace with actual API call)
             setTimeout(() => {
@@ -193,6 +217,7 @@ function initContactForm() {
                 
                 // Reset form
                 this.reset();
+                clearAllErrors();
                 
                 // Reset button
                 submitBtn.innerHTML = originalText;
@@ -203,6 +228,91 @@ function initContactForm() {
             }, 2000);
         });
     }
+}
+
+// Field validation
+function validateField() {
+    const field = this;
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Remove existing errors
+    clearFieldError(field);
+    
+    // Required field validation
+    if (field.hasAttribute('required') && !value) {
+        errorMessage = 'هذا الحقل مطلوب';
+        isValid = false;
+    }
+    
+    // Email validation
+    if (field.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            errorMessage = 'يرجى إدخال بريد إلكتروني صحيح';
+            isValid = false;
+        }
+    }
+    
+    // Phone validation
+    if (field.type === 'tel' && value) {
+        const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+        if (!phoneRegex.test(value)) {
+            errorMessage = 'يرجى إدخال رقم هاتف صحيح';
+            isValid = false;
+        }
+    }
+    
+    // Show error if validation failed
+    if (!isValid) {
+        showFieldError(field, errorMessage);
+    }
+    
+    return isValid;
+}
+
+// Show field error
+function showFieldError(field, message) {
+    field.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
+    field.classList.remove('border-slate-600/50', 'focus:border-green-400', 'focus:ring-green-400/20');
+    
+    // Create error message element
+    const errorElement = document.createElement('div');
+    errorElement.className = 'field-error text-red-400 text-xs mt-1';
+    errorElement.textContent = message;
+    
+    // Insert error message after field
+    field.parentNode.appendChild(errorElement);
+}
+
+// Clear field error
+function clearFieldError(field) {
+    field.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
+    field.classList.add('border-slate-600/50', 'focus:border-green-400', 'focus:ring-green-400/20');
+    
+    // Remove error message
+    const errorElement = field.parentNode.querySelector('.field-error');
+    if (errorElement) {
+        errorElement.remove();
+    }
+}
+
+// Clear errors on input
+function clearErrors() {
+    clearFieldError(this);
+}
+
+// Clear all form errors
+function clearAllErrors() {
+    const errorElements = document.querySelectorAll('.field-error');
+    errorElements.forEach(element => element.remove());
+    
+    const fields = document.querySelectorAll('#contact-form input, #contact-form select, #contact-form textarea');
+    fields.forEach(field => {
+        field.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500/20');
+        field.classList.add('border-slate-600/50', 'focus:border-green-400', 'focus:ring-green-400/20');
+    });
 }
 
 // Notification system
@@ -278,6 +388,40 @@ function initTypingAnimation() {
 // Initialize typing animation when page loads
 document.addEventListener('DOMContentLoaded', initTypingAnimation);
 
+// Contact info interactions
+function initContactInteractions() {
+    // Copy to clipboard functionality
+    const contactItems = document.querySelectorAll('#contact .group');
+    
+    contactItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const textElement = this.querySelector('p:last-child');
+            if (textElement) {
+                const text = textElement.textContent.trim();
+                
+                // Copy to clipboard
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showNotification(`تم نسخ: ${text}`, 'success');
+                    });
+                } else {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showNotification(`تم نسخ: ${text}`, 'success');
+                }
+            }
+        });
+    });
+}
+
+// Initialize contact interactions
+document.addEventListener('DOMContentLoaded', initContactInteractions);
+
 // Parallax effect for background elements
 function initParallax() {
     const parallaxElements = document.querySelectorAll('.parallax');
@@ -316,3 +460,61 @@ function initLazyLoading() {
 
 // Initialize lazy loading
 document.addEventListener('DOMContentLoaded', initLazyLoading);
+
+// Scroll to top functionality
+function initScrollToTop() {
+    // Create scroll to top button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.innerHTML = '<i data-lucide="arrow-up" class="w-5 h-5"></i>';
+    scrollBtn.className = 'fixed bottom-8 left-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50 opacity-0 pointer-events-none';
+    scrollBtn.id = 'scroll-to-top';
+    
+    document.body.appendChild(scrollBtn);
+    lucide.createIcons();
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+            scrollBtn.classList.add('opacity-100');
+        } else {
+            scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+            scrollBtn.classList.remove('opacity-100');
+        }
+    });
+    
+    // Scroll to top on click
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Initialize scroll to top
+document.addEventListener('DOMContentLoaded', initScrollToTop);
+
+// Portfolio items animation on scroll
+function initPortfolioItemsAnimation() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    portfolioItems.forEach(item => {
+        item.style.transition = 'all 0.3s ease';
+    });
+    
+    const portfolioObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    portfolioItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(50px) scale(0.9)';
+        portfolioObserver.observe(item);
+    });
+}
