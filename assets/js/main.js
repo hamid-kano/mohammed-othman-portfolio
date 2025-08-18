@@ -466,7 +466,7 @@ function initScrollToTop() {
     // Create scroll to top button
     const scrollBtn = document.createElement('button');
     scrollBtn.innerHTML = '<i data-lucide="arrow-up" class="w-5 h-5"></i>';
-    scrollBtn.className = 'fixed bottom-8 left-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50 opacity-0 pointer-events-none';
+    scrollBtn.className = 'fixed bottom-8 left-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50 opacity-0 pointer-events-none flex items-center justify-center';
     scrollBtn.id = 'scroll-to-top';
     
     document.body.appendChild(scrollBtn);
