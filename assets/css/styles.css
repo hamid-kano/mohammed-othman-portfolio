@@ -4,16 +4,15 @@
 
 /* CSS Variables for Dark Theme */
 :root {
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
-  --secondary: #06b6d4;
-  --accent: #8b5cf6;
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
+  --primary: #0B2447;
+  --secondary: #19376D;
+  --accent: #576CBC;
+  --bg-primary: #0B2447;
+  --bg-secondary: #19376D;
   --text-primary: #f8fafc;
   --text-secondary: #e2e8f0;
-  --border-primary: #334155;
-  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+  --border-primary: #576CBC;
+  --shadow-glow: 0 0 20px rgba(87, 108, 188, 0.3);
 }
 
 /* Base Styles */
@@ -34,48 +33,42 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
-/* Gradient Backgrounds */
-.gradient-creative {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
+/* Simplified Backgrounds */
+.bg-primary {
+  background: var(--primary);
 }
 
-.gradient-sunset {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 50%, #42a5f5 100%);
+.bg-secondary {
+  background: var(--secondary);
 }
 
-.gradient-cool {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.bg-accent {
+  background: var(--accent);
 }
 
-.gradient-warm {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 }
 
-.gradient-ocean {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
 }
 
-/* Text Gradients */
+/* Text Colors */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
 .text-gradient-primary {
-  background: linear-gradient(45deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-creative {
-  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientText 6s ease infinite;
-}
-
-.text-gradient-secondary {
-  background: linear-gradient(45deg, var(--secondary), var(--primary));
+  background: linear-gradient(45deg, var(--secondary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -137,7 +130,7 @@ body {
 /* Skills Progress Bar */
 .skill-bar {
   height: 8px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: var(--accent);
   border-radius: 10px;
   transform-origin: right;
   transform: scaleX(0);
@@ -150,7 +143,7 @@ body {
 
 /* Portfolio Filter */
 .portfolio-filter.active {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: var(--accent);
   color: white;
 }
 
@@ -167,7 +160,7 @@ body {
   right: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 
@@ -223,7 +216,7 @@ input::placeholder, textarea::placeholder {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--accent);
   border-radius: 10px;
 }
 
