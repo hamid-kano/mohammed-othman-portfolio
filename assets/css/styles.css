@@ -1,450 +1,139 @@
-/* Custom Tailwind CSS Styles for Mohammed Othman Portfolio */
+/* ===== MAIN STYLES ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
 
-/* CSS Variables for Dark Theme */
-:root {
-  --primary: #0B2447;
-  --secondary: #19376D;
-  --accent: #576CBC;
-  --bg-primary: #0B2447;
-  --bg-secondary: #19376D;
-  --text-primary: #f8fafc;
-  --text-secondary: #e2e8f0;
-  --border-primary: #576CBC;
-  --shadow-glow: 0 0 20px rgba(87, 108, 188, 0.3);
-}
-
-/* Base Styles */
 * {
-  font-family: 'Cairo', sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
-body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  overflow-x: hidden;
-}
-
-/* Glass Effect */
-.glass-effect {
-  background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(148, 163, 184, 0.1);
-}
-
-/* Simplified Backgrounds */
-.bg-primary {
-  background: var(--primary);
-}
-
-.bg-secondary {
-  background: var(--secondary);
-}
-
-.bg-accent {
-  background: var(--accent);
-}
-
-.gradient-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-}
-
-.gradient-secondary {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
-}
-
-/* Text Colors */
-.text-primary {
-  color: var(--primary);
-}
-
-.text-secondary {
-  color: var(--secondary);
-}
-
-.text-accent {
-  color: var(--accent);
-}
-
-.text-gradient-primary {
-  background: linear-gradient(45deg, var(--secondary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Animations */
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes gradientText {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-  50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.8); }
-}
-
-/* Utility Classes */
-.hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hover-lift:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite alternate;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-orb {
-  animation: float 8s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float 6s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.animate-float-slow {
-  animation: float 8s ease-in-out infinite;
-  animation-delay: 4s;
-}
-
-/* Skills Progress Bar */
-.skill-bar {
-  height: 8px;
-  background: var(--accent);
-  border-radius: 10px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 1.5s ease-out;
-}
-
-.skill-bar.animate {
-  transform: scaleX(1);
-}
-
-/* Portfolio Filter */
-.portfolio-filter.active {
-  background: var(--accent);
-  color: white;
-}
-
-/* Navigation */
-.nav-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-item::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 3px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-item:hover::before,
-.nav-item.active::before {
-  width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .text-6xl { font-size: 2.5rem !important; }
-  .text-5xl { font-size: 2rem !important; }
-  .text-4xl { font-size: 1.75rem !important; }
-}
-
-/* RTL Support */
+/* Smooth Scrolling */
 html {
-  direction: rtl;
+    scroll-behavior: smooth;
 }
 
-body {
-  direction: rtl;
-  text-align: right;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-/* Button spacing for RTL */
-.btn-spacing {
-  gap: 1rem;
-}
-
-/* Form elements RTL */
-input, textarea, select {
-  text-align: right;
-  direction: rtl;
-}
-
-input::placeholder, textarea::placeholder {
-  text-align: right;
-  direction: rtl;
-}
-
-/* Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+    background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
+    background: #576CBC;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow: var(--shadow-glow);
+    background: #4f46e5;
 }
 
-/* Contact Form Styles */
-.contact-form-field {
-  position: relative;
-  transition: all 0.3s ease;
+/* Skill Bar Animation */
+.skill-bar {
+    transform-origin: left;
+    animation: fillBar 2s ease-out forwards;
 }
 
-.contact-form-field:focus-within {
-  transform: translateY(-2px);
+@keyframes fillBar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
 }
 
-.contact-form-field input:focus,
-.contact-form-field textarea:focus,
-.contact-form-field select:focus {
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
-  border-color: #22c55e;
+/* Portfolio Filter Animation */
+.portfolio-item {
+    transition: all 0.3s ease;
 }
 
-.contact-form-field.error input,
-.contact-form-field.error textarea,
-.contact-form-field.error select {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+.portfolio-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
 }
 
-/* Contact Info Cards */
-.contact-info-card {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+/* Gradient Text */
+.text-gradient-creative {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.contact-info-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.5s ease;
+/* Custom Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
-.contact-info-card:hover::before {
-  left: 100%;
+.float-animation {
+    animation: float 3s ease-in-out infinite;
 }
 
-.contact-info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* Navigation Blur Effect */
+nav.scrolled {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Social Media Links */
-.social-link {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+/* Button Hover Effects */
+.btn-hover-effect {
+    position: relative;
+    overflow: hidden;
 }
 
-.social-link::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.btn-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
-.social-link:hover::after {
-  opacity: 1;
+.btn-hover-effect:hover::before {
+    left: 100%;
 }
 
-.social-link:hover {
-  transform: translateY(-3px) scale(1.05);
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
 }
 
-/* Form Validation Styles */
-.field-error {
-  animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-
-/* Success Animation */
-.success-animation {
-  animation: successPulse 0.6s ease-out;
-}
-
-@keyframes successPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Loading Animation */
-.loading-dots {
-  display: inline-flex;
-  gap: 4px;
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
 }
 
-.loading-dots::after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
-  animation: loadingDots 1.4s infinite ease-in-out;
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
-.loading-dots::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
-  animation: loadingDots 1.4s infinite ease-in-out;
-  animation-delay: -0.16s;
-}
-
-@keyframes loadingDots {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1); }
-}
-
-/* Notification Styles */
-.notification {
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.notification.success {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9));
-}
-
-.notification.error {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
-}
-
-.notification.info {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9));
-}
-
-/* Scroll to Top Button */
-#scroll-to-top {
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#scroll-to-top:hover {
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-}
-
-/* Footer Styles */
-footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-top: 1px solid rgba(148, 163, 184, 0.1);
-}
-
-footer a:hover {
-  color: var(--primary);
-  transition: color 0.3s ease;
-}
-
-/* Contact Section Background */
-#contact {
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #581c87 100%);
-  position: relative;
-}
-
-#contact::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23334155" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-  opacity: 0.1;
-  pointer-events: none;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-  .glass-effect {
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px solid #ffffff;
-  }
-  
-  .text-slate-300,
-  .text-slate-400 {
-    color: #ffffff !important;
-  }
-}
-
-/* Focus Styles for Accessibility */
-*:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .mobile-center {
+        text-align: center;
+    }
+    
+    .mobile-full {
+        width: 100%;
+    }
 }

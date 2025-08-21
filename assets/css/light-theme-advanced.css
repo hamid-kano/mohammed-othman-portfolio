@@ -1,0 +1,203 @@
+/* ===== ADVANCED LIGHT THEME FIXES ===== */
+
+/* === PORTFOLIO FILTER BUTTONS === */
+.light-theme .portfolio-filter {
+    color: #4b5563 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.light-theme .portfolio-filter.active {
+    background: linear-gradient(to right, #576CBC, #4f46e5) !important;
+    color: white !important;
+}
+
+.light-theme .portfolio-filter:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #1f2937 !important;
+}
+
+/* === SKILL PROGRESS BARS === */
+.light-theme .skill-item .bg-slate-700\/50 {
+    background: #e5e7eb !important;
+}
+
+/* === CONTACT FORM FOCUS STATES === */
+.light-theme input:focus,
+.light-theme textarea:focus,
+.light-theme select:focus {
+    border-color: #576CBC !important;
+    box-shadow: 0 0 0 3px rgba(87, 107, 188, 0.1) !important;
+}
+
+/* === SOCIAL MEDIA CARDS === */
+.light-theme .bg-slate-700\/30 {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.light-theme .hover\\:bg-blue-600\\/20:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.light-theme .hover\\:bg-pink-600\\/20:hover {
+    background: rgba(236, 72, 153, 0.1) !important;
+}
+
+.light-theme .hover\\:bg-blue-500\\/20:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.light-theme .hover\\:bg-blue-400\\/20:hover {
+    background: rgba(96, 165, 250, 0.1) !important;
+}
+
+/* === EXPERIENCE CARDS HOVER COLORS === */
+.light-theme .group:hover .text-purple-400 {
+    color: #a855f7 !important;
+}
+
+.light-theme .group:hover .text-amber-400 {
+    color: #f59e0b !important;
+}
+
+.light-theme .group:hover .text-blue-400 {
+    color: #3b82f6 !important;
+}
+
+.light-theme .group:hover .text-green-400 {
+    color: #10b981 !important;
+}
+
+.light-theme .group:hover .text-cyan-400 {
+    color: #06b6d4 !important;
+}
+
+.light-theme .group:hover .text-indigo-400 {
+    color: #6366f1 !important;
+}
+
+.light-theme .group:hover .text-teal-400 {
+    color: #14b8a6 !important;
+}
+
+.light-theme .group:hover .text-orange-400 {
+    color: #f97316 !important;
+}
+
+/* === STATS CARDS === */
+.light-theme .bg-white\/10 {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === GRADIENT TEXT BACKGROUNDS === */
+.light-theme .bg-gradient-to-r.from-blue-400.to-purple-500.bg-clip-text.text-transparent,
+.light-theme .bg-gradient-to-r.from-purple-400.to-pink-500.bg-clip-text.text-transparent,
+.light-theme .bg-gradient-to-r.from-cyan-400.to-blue-500.bg-clip-text.text-transparent,
+.light-theme .bg-gradient-to-r.from-amber-400.to-orange-500.bg-clip-text.text-transparent,
+.light-theme .bg-gradient-to-r.from-green-400.to-emerald-500.bg-clip-text.text-transparent,
+.light-theme .bg-gradient-to-r.from-purple-400.to-blue-500.bg-clip-text.text-transparent {
+    /* Keep gradient text as is for visual appeal */
+}
+
+/* === PORTFOLIO OVERLAY === */
+.light-theme .portfolio-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent) !important;
+}
+
+/* === BUTTON HOVER STATES === */
+.light-theme .hover\\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme .hover\\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* === ANIMATED ELEMENTS === */
+.light-theme .animate-pulse {
+    /* Keep animation as is */
+}
+
+/* === SPECIAL BACKGROUND PATTERNS === */
+.light-theme .absolute.inset-0.opacity-10 {
+    opacity: 0.03 !important;
+}
+
+/* === MOBILE MENU ITEMS === */
+.light-theme #mobile-menu a {
+    color: #4b5563 !important;
+}
+
+.light-theme #mobile-menu a:hover {
+    color: #1f2937 !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* === FORM ICONS === */
+.light-theme .group-focus-within\\:text-green-400 {
+    color: #10b981 !important;
+}
+
+/* === LOADING STATES === */
+.light-theme .bg-slate-600 {
+    background: #d1d5db !important;
+}
+
+/* === SPECIAL HOVER EFFECTS === */
+.light-theme .group:hover .group-hover\\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.light-theme .group:hover .group-hover\\:scale-110 {
+    transform: scale(1.1) !important;
+}
+
+/* === CONTACT SECTION SPECIAL ELEMENTS === */
+.light-theme .w-2.h-2.bg-green-400.rounded-full.animate-pulse {
+    background: #10b981 !important;
+}
+
+.light-theme .text-green-400 {
+    color: #10b981 !important;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .light-theme .bg-slate-800\/95 {
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+}
+
+/* === FINAL OVERRIDES === */
+.light-theme * {
+    transition: all 0.3s ease !important;
+}
+
+/* Force all gradient background icons to be white */
+.light-theme [class*="bg-gradient"] i {
+    color: white !important;
+}
+
+/* Force all rounded colored containers icons to be white */
+.light-theme .rounded-xl[class*="bg-"] i,
+.light-theme .rounded-2xl[class*="bg-"] i,
+.light-theme .rounded-full[class*="bg-"] i {
+    color: white !important;
+}
+
+/* === ENSURE READABILITY === */
+.light-theme .text-xs,
+.light-theme .text-sm,
+.light-theme .text-base,
+.light-theme .text-lg,
+.light-theme .text-xl {
+    color: inherit;
+}
+
+/* === BRAND COLOR PRESERVATION === */
+.light-theme [style*="#576CBC"] {
+    /* Keep brand color as is */
+}
