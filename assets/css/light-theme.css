@@ -22,34 +22,98 @@ body.light-theme {
     background: rgba(0, 0, 0, 0.05) !important;
 }
 
+/* Logo and Brand */
+.light-theme nav h1,
+.light-theme nav p {
+    color: #1f2937 !important;
+}
+
+.light-theme nav .text-slate-400 {
+    color: #6b7280 !important;
+}
+
+/* Theme Toggle Icons */
+.light-theme #theme-toggle i {
+    color: #1f2937 !important;
+}
+
+.light-theme button i {
+    color: #1f2937 !important;
+}
+
 /* Sections */
 .light-theme section {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
 }
 
-.light-theme #about,
-.light-theme #services,
-.light-theme footer {
+.light-theme #home {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme #about {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+.light-theme #skills {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme #services {
     background: #ffffff !important;
 }
 
-/* Text Colors - Only change text elements */
-.light-theme h1:not(:has(i)),
-.light-theme h2:not(:has(i)),
-.light-theme h3:not(:has(i)),
-.light-theme h4:not(:has(i)),
-.light-theme p:not(:has(i)),
-.light-theme span:not(:has(i)),
-.light-theme div:not(:has(i)) {
+.light-theme #portfolio {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme #experience {
+    background: #f8fafc !important;
+}
+
+.light-theme #contact {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme footer {
+    background: #ffffff !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+/* Text Colors - Comprehensive */
+.light-theme .text-white {
     color: #1f2937 !important;
 }
 
-.light-theme .text-slate-300:not(i) {
+.light-theme .text-slate-50 {
+    color: #1f2937 !important;
+}
+
+.light-theme .text-slate-200 {
+    color: #4b5563 !important;
+}
+
+.light-theme .text-slate-300 {
     color: #6b7280 !important;
 }
 
-.light-theme .text-slate-400:not(i) {
+.light-theme .text-slate-400 {
     color: #9ca3af !important;
+}
+
+/* Headers */
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5,
+.light-theme h6 {
+    color: #1f2937 !important;
+}
+
+/* Paragraphs and spans */
+.light-theme p,
+.light-theme span:not([class*="bg-"]):not([class*="text-gradient"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-green"]):not([class*="text-red"]):not([class*="text-yellow"]):not([class*="text-pink"]):not([class*="text-indigo"]):not([class*="text-cyan"]):not([class*="text-orange"]):not([class*="text-amber"]):not([class*="text-emerald"]):not([class*="text-teal"]):not([class*="text-violet"]):not([class*="text-rose"]) {
+    color: #1f2937 !important;
 }
 
 /* Backgrounds */
@@ -58,9 +122,13 @@ body.light-theme {
 .light-theme .bg-slate-700\/50,
 .light-theme .bg-slate-800\/50,
 .light-theme .bg-slate-800\/30,
-.light-theme .backdrop-blur-xl {
+.light-theme .bg-slate-700\/30 {
     background: rgba(255, 255, 255, 0.9) !important;
     border: 1px solid #e5e7eb !important;
+}
+
+.light-theme .backdrop-blur-xl {
+    background: rgba(255, 255, 255, 0.9) !important;
 }
 
 .light-theme .bg-white\/10,
@@ -68,12 +136,27 @@ body.light-theme {
     background: rgba(0, 0, 0, 0.05) !important;
 }
 
+/* Cards and containers */
+.light-theme [class*="bg-slate-8"] {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid #e5e7eb !important;
+}
+
 /* Borders */
 .light-theme [class*="border-"][class*="\/30"],
 .light-theme .border-slate-700\/50,
 .light-theme .border-slate-600\/50,
 .light-theme .border-white\/10,
-.light-theme .border-slate-800 {
+.light-theme .border-slate-800,
+.light-theme [class*="border-blue-"],
+.light-theme [class*="border-purple-"],
+.light-theme [class*="border-green-"],
+.light-theme [class*="border-cyan-"],
+.light-theme [class*="border-pink-"],
+.light-theme [class*="border-orange-"],
+.light-theme [class*="border-amber-"],
+.light-theme [class*="border-indigo-"],
+.light-theme [class*="border-teal-"] {
     border-color: #e5e7eb !important;
 }
 
@@ -99,12 +182,87 @@ body.light-theme {
 }
 
 /* Mobile Menu */
-.light-theme #mobile-menu .bg-slate-800\/95 {
+.light-theme #mobile-menu {
     background: rgba(255, 255, 255, 0.95) !important;
     border-top: 1px solid #e5e7eb !important;
+}
+
+.light-theme #mobile-menu a {
+    color: #4b5563 !important;
+}
+
+.light-theme #mobile-menu a:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #1f2937 !important;
 }
 
 /* Animation Backgrounds */
 .light-theme [class*="bg-[radial-gradient"] {
     background: radial-gradient(circle, rgba(59, 130, 246, 0.05), transparent 50%) !important;
+}
+
+/* Portfolio Items */
+.light-theme .portfolio-item img {
+    opacity: 0.9;
+}
+
+/* Stats and Numbers */
+.light-theme .font-bold {
+    color: #1f2937 !important;
+}
+
+/* Icons in light theme should remain visible */
+.light-theme i[data-lucide] {
+    color: inherit !important;
+}
+
+/* Specific icon containers */
+.light-theme .w-10.h-10 i,
+.light-theme .w-12.h-12 i,
+.light-theme .w-16.h-16 i,
+.light-theme .w-20.h-20 i {
+    color: white !important;
+}
+
+/* Button text in gradients should stay white */
+.light-theme [class*="bg-gradient-"] {
+    color: white !important;
+}
+
+.light-theme [class*="bg-gradient-"] * {
+    color: white !important;
+}
+
+/* Footer text */
+.light-theme footer h3,
+.light-theme footer h4,
+.light-theme footer p,
+.light-theme footer a {
+    color: #1f2937 !important;
+}
+
+.light-theme footer .text-slate-400 {
+    color: #6b7280 !important;
+}
+
+/* Contact form labels */
+.light-theme label {
+    color: #374151 !important;
+}
+
+/* Skill bars and progress */
+.light-theme .skill-item span {
+    color: #1f2937 !important;
+}
+
+/* Experience cards text */
+.light-theme .bg-slate-700\/50 h4,
+.light-theme .bg-slate-700\/50 p {
+    color: #1f2937 !important;
+}
+
+/* Service cards */
+.light-theme .group h3,
+.light-theme .group p {
+    color: #1f2937 !important;
 }

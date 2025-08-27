@@ -14,6 +14,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/light-theme.css">
+    <link rel="stylesheet" href="assets/css/theme-fixes.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <!-- AOS Animation -->
@@ -1519,6 +1520,12 @@
             body.classList.add('light-theme');
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
+            // Force refresh of styles
+            setTimeout(() => {
+                body.style.display = 'none';
+                body.offsetHeight; // Trigger reflow
+                body.style.display = '';
+            }, 10);
         }
         
         themeToggle.addEventListener('click', () => {
@@ -1537,6 +1544,13 @@
                 moonIcon.classList.add('hidden');
                 localStorage.setItem('theme', 'light');
             }
+            
+            // Force refresh of styles
+            setTimeout(() => {
+                body.style.display = 'none';
+                body.offsetHeight; // Trigger reflow
+                body.style.display = '';
+            }, 10);
         });
     </script>
 </body>

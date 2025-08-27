@@ -1,0 +1,189 @@
+/* ===== THEME FIXES ===== */
+
+/* Force text colors in light theme */
+.light-theme * {
+    transition: all 0.3s ease;
+}
+
+/* Ensure all white text becomes dark in light theme */
+.light-theme .text-white,
+.light-theme .text-slate-50,
+.light-theme .text-slate-100 {
+    color: #1f2937 !important;
+}
+
+/* Ensure slate colors are properly converted */
+.light-theme .text-slate-200 {
+    color: #4b5563 !important;
+}
+
+.light-theme .text-slate-300 {
+    color: #6b7280 !important;
+}
+
+.light-theme .text-slate-400 {
+    color: #9ca3af !important;
+}
+
+/* Fix navigation text */
+.light-theme nav * {
+    color: #1f2937 !important;
+}
+
+.light-theme nav .text-slate-400 {
+    color: #6b7280 !important;
+}
+
+/* Fix all headings */
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme h4,
+.light-theme h5,
+.light-theme h6 {
+    color: #1f2937 !important;
+}
+
+/* Fix all paragraphs */
+.light-theme p {
+    color: #374151 !important;
+}
+
+/* Fix spans that don't have specific color classes */
+.light-theme span:not([class*="text-"]):not([class*="bg-gradient"]) {
+    color: #1f2937 !important;
+}
+
+/* Fix divs with text content */
+.light-theme div:not([class*="bg-gradient"]):not([class*="w-"]):not([class*="h-"]) {
+    color: #1f2937 !important;
+}
+
+/* Ensure buttons with gradients keep white text */
+.light-theme button[class*="bg-gradient"] *,
+.light-theme a[class*="bg-gradient"] * {
+    color: white !important;
+}
+
+/* Fix mobile menu */
+.light-theme #mobile-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.light-theme #mobile-menu a {
+    color: #4b5563 !important;
+}
+
+/* Fix footer */
+.light-theme footer {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+.light-theme footer * {
+    color: #1f2937 !important;
+}
+
+.light-theme footer .text-slate-400 {
+    color: #6b7280 !important;
+}
+
+/* Fix form elements */
+.light-theme input,
+.light-theme textarea,
+.light-theme select,
+.light-theme label {
+    color: #1f2937 !important;
+}
+
+/* Fix skill bars text */
+.light-theme .skill-item * {
+    color: #1f2937 !important;
+}
+
+/* Fix experience cards */
+.light-theme .bg-slate-700\/50 *,
+.light-theme .bg-slate-800\/50 * {
+    color: #1f2937 !important;
+}
+
+/* Fix service cards */
+.light-theme .group h3,
+.light-theme .group p {
+    color: #1f2937 !important;
+}
+
+/* Fix contact cards */
+.light-theme .bg-slate-700\/30 * {
+    color: #1f2937 !important;
+}
+
+/* Ensure icons in colored backgrounds stay white */
+.light-theme [class*="bg-gradient"] i,
+.light-theme [class*="bg-blue"] i,
+.light-theme [class*="bg-purple"] i,
+.light-theme [class*="bg-green"] i,
+.light-theme [class*="bg-red"] i,
+.light-theme [class*="bg-yellow"] i,
+.light-theme [class*="bg-pink"] i,
+.light-theme [class*="bg-indigo"] i,
+.light-theme [class*="bg-cyan"] i,
+.light-theme [class*="bg-orange"] i,
+.light-theme [class*="bg-amber"] i,
+.light-theme [class*="bg-emerald"] i,
+.light-theme [class*="bg-teal"] i,
+.light-theme [class*="bg-violet"] i,
+.light-theme [class*="bg-rose"] i {
+    color: white !important;
+}
+
+/* Fix specific sections backgrounds */
+.light-theme #home {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme #about {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+.light-theme #skills {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme #services {
+    background: #ffffff !important;
+}
+
+.light-theme #portfolio {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+.light-theme #experience {
+    background: #f8fafc !important;
+}
+
+.light-theme #contact {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+}
+
+/* Fix card backgrounds */
+.light-theme .bg-slate-800\/50,
+.light-theme .bg-slate-700\/50,
+.light-theme .bg-slate-800\/30,
+.light-theme .bg-slate-700\/30 {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+/* Fix backdrop blur elements */
+.light-theme .backdrop-blur-xl {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Fix borders */
+.light-theme [class*="border-"][class*="/30"],
+.light-theme .border-slate-700\/50,
+.light-theme .border-slate-600\/50,
+.light-theme .border-white\/10 {
+    border-color: #e5e7eb !important;
+}
