@@ -649,16 +649,16 @@ const portfolioData = {
     tamkeen: {
         title: 'هوية بصرية تمكين',
         images: [
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_1.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_2.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_3.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_4.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_5.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_6.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_7.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_8.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2 copy.jpg',
-            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 3.jpg'
+            'assets/img/portfolio/branding/tamkeen/tamkeen-1.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-2.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-3.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-4.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-5.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-6.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-7.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-8.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-9.jpg',
+            'assets/img/portfolio/branding/tamkeen/tamkeen-10.jpg'
         ]
     },
     masaha: {
