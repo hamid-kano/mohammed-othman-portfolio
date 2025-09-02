@@ -2,6 +2,7 @@
 *.rar
 *.zip
 *.7z
+*.tar.gz
 
 # Large video files
 *.mp4
@@ -9,14 +10,23 @@
 *.mov
 *.mkv
 
-# Large image files (optional)
+# Large image files (optional - keep smaller ones)
 *.psd
 *.ai
+*.eps
 
-# OS generated files
+# System files
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*~
