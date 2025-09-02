@@ -500,12 +500,19 @@ const portfolioData = {
     divo: {
         title: 'هوية بصرية Divo',
         images: [
+            'assets/img/portfolio/branding/divo/00 (2).png',
             'assets/img/portfolio/branding/divo/01 (1).png',
             'assets/img/portfolio/branding/divo/01 (3).png',
             'assets/img/portfolio/branding/divo/01 (4).png',
             'assets/img/portfolio/branding/divo/01 (5).png',
             'assets/img/portfolio/branding/divo/01 (6).png',
-            'assets/img/portfolio/branding/divo/01 (7).png'
+            'assets/img/portfolio/branding/divo/01 (7).png',
+            'assets/img/portfolio/branding/divo/01 (8).png',
+            'assets/img/portfolio/branding/divo/01 (9).png',
+            'assets/img/portfolio/branding/divo/01 (10).png',
+            'assets/img/portfolio/branding/divo/01 (11).png',
+            'assets/img/portfolio/branding/divo/01 (12).png',
+            'assets/img/portfolio/branding/divo/01 (13).png'
         ]
     },
     vira: {
@@ -513,10 +520,16 @@ const portfolioData = {
         images: [
             'assets/img/portfolio/branding/vira/00Artboard 1_1.jpg',
             'assets/img/portfolio/branding/vira/00Artboard 1_2.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 1_3.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 1_4.jpg',
             'assets/img/portfolio/branding/vira/00Artboard 2.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 3_1.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 3_2.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 3_3.jpg',
             'assets/img/portfolio/branding/vira/00Artboard 4.jpg',
             'assets/img/portfolio/branding/vira/00Artboard 5.jpg',
-            'assets/img/portfolio/branding/vira/00Artboard 6.jpg'
+            'assets/img/portfolio/branding/vira/00Artboard 6.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 7.jpg'
         ]
     },
     sky: {
@@ -527,7 +540,12 @@ const portfolioData = {
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 2.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_1.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_2.jpg',
-            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_3.jpg'
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_3.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_4.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_5.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_6.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_7.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_8.jpg'
         ]
     },
     himo: {
@@ -538,7 +556,8 @@ const portfolioData = {
             'assets/img/portfolio/branding/himo/03.jpg',
             'assets/img/portfolio/branding/himo/04.jpg',
             'assets/img/portfolio/branding/himo/05.jpg',
-            'assets/img/portfolio/branding/himo/06.jpg'
+            'assets/img/portfolio/branding/himo/06.jpg',
+            'assets/img/portfolio/branding/himo/07.jpg'
         ]
     },
     scc: {
@@ -549,7 +568,125 @@ const portfolioData = {
             'assets/img/portfolio/branding/scc/sccArtboard 3.jpg',
             'assets/img/portfolio/branding/scc/sccArtboard 4.jpg',
             'assets/img/portfolio/branding/scc/sccArtboard 5.jpg',
-            'assets/img/portfolio/branding/scc/sccArtboard 6.jpg'
+            'assets/img/portfolio/branding/scc/sccArtboard 6.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 7.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 8.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 9.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 10.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 11.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 12.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 13.jpg'
+        ]
+    },
+    hango: {
+        title: 'هوية بصرية Hango',
+        images: [
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_1.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_2.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_3.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_4.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_6.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_7.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_8.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_9.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_10.jpg',
+            'assets/img/portfolio/branding/hango/Untitled-1Artboard 1_11.jpg'
+        ]
+    },
+    lederma: {
+        title: 'هوية بصرية Le Derma Code',
+        images: [
+            'assets/img/portfolio/branding/Le Derma Code/01 (1).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (2).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (4).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (5).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (6).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (7).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (9).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (11).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (12).png',
+            'assets/img/portfolio/branding/Le Derma Code/01 (13).png'
+        ]
+    },
+    proleran: {
+        title: 'هوية بصرية Pro Leran',
+        images: [
+            'assets/img/portfolio/branding/pro leran/01.jpg',
+            'assets/img/portfolio/branding/pro leran/02.jpg',
+            'assets/img/portfolio/branding/pro leran/03.jpg',
+            'assets/img/portfolio/branding/pro leran/04.jpg',
+            'assets/img/portfolio/branding/pro leran/05.jpg',
+            'assets/img/portfolio/branding/pro leran/06.jpg'
+        ]
+    },
+    puresmile: {
+        title: 'هوية بصرية Pure Smile',
+        images: [
+            'assets/img/portfolio/branding/Pure Smile/01.jpg',
+            'assets/img/portfolio/branding/Pure Smile/02.jpg',
+            'assets/img/portfolio/branding/Pure Smile/03.jpg',
+            'assets/img/portfolio/branding/Pure Smile/04.jpg',
+            'assets/img/portfolio/branding/Pure Smile/05.jpg',
+            'assets/img/portfolio/branding/Pure Smile/06.jpg',
+            'assets/img/portfolio/branding/Pure Smile/07.jpg',
+            'assets/img/portfolio/branding/Pure Smile/08.jpg',
+            'assets/img/portfolio/branding/Pure Smile/09.jpg',
+            'assets/img/portfolio/branding/Pure Smile/10.jpg'
+        ]
+    },
+    whitbuffalo: {
+        title: 'هوية بصرية White Buffalo',
+        images: [
+            'assets/img/portfolio/branding/whit buffalo/01.png',
+            'assets/img/portfolio/branding/whit buffalo/02.png',
+            'assets/img/portfolio/branding/whit buffalo/03.png',
+            'assets/img/portfolio/branding/whit buffalo/04.png',
+            'assets/img/portfolio/branding/whit buffalo/05.png',
+            'assets/img/portfolio/branding/whit buffalo/06.png',
+            'assets/img/portfolio/branding/whit buffalo/07.png',
+            'assets/img/portfolio/branding/whit buffalo/08.png',
+            'assets/img/portfolio/branding/whit buffalo/09.png'
+        ]
+    },
+    tamkeen: {
+        title: 'هوية بصرية تمكين',
+        images: [
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_1.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_2.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_3.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_4.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_5.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_6.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_7.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_8.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2 copy.jpg',
+            'assets/img/portfolio/branding/تمكين/تمكينArtboard 3.jpg'
+        ]
+    },
+    masaha: {
+        title: 'هوية بصرية مساحة بلاس',
+        images: [
+            'assets/img/portfolio/branding/مساحة بلاس/10.jpg',
+            'assets/img/portfolio/branding/مساحة بلاس/20.jpg',
+            'assets/img/portfolio/branding/مساحة بلاس/30.jpg',
+            'assets/img/portfolio/branding/مساحة بلاس/40.jpg',
+            'assets/img/portfolio/branding/مساحة بلاس/50.jpg',
+            'assets/img/portfolio/branding/مساحة بلاس/60.jpg'
+        ]
+    },
+    yaman: {
+        title: 'هوية بصرية يمان',
+        images: [
+            'assets/img/portfolio/branding/يمان/01.jpg',
+            'assets/img/portfolio/branding/يمان/02.jpg',
+            'assets/img/portfolio/branding/يمان/03.jpg',
+            'assets/img/portfolio/branding/يمان/04.jpg',
+            'assets/img/portfolio/branding/يمان/05.jpg',
+            'assets/img/portfolio/branding/يمان/06.jpg',
+            'assets/img/portfolio/branding/يمان/07.jpg',
+            'assets/img/portfolio/branding/يمان/11.jpg',
+            'assets/img/portfolio/branding/يمان/BAG-C_side-A.jpg',
+            'assets/img/portfolio/branding/يمان/BAG-C_side-A.jpg-111.jpg'
         ]
     },
     bison: {
@@ -558,6 +695,28 @@ const portfolioData = {
             'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون.jpg',
             'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون-2.jpg',
             'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون-4.jpg'
+        ]
+    },
+    socialmix: {
+        title: 'تصاميم سوشل ميديا متنوعة',
+        images: [
+            'assets/img/portfolio/social/منوعة/01 (1).png',
+            'assets/img/portfolio/social/منوعة/01 (2).png',
+            'assets/img/portfolio/social/منوعة/01 (3).png',
+            'assets/img/portfolio/social/منوعة/01 (4).png',
+            'assets/img/portfolio/social/منوعة/01 (5).png',
+            'assets/img/portfolio/social/منوعة/01 (6).png',
+            'assets/img/portfolio/social/منوعة/01 (9).png',
+            'assets/img/portfolio/social/منوعة/01 (10).png',
+            'assets/img/portfolio/social/منوعة/01 (11).png',
+            'assets/img/portfolio/social/منوعة/01 (12).png',
+            'assets/img/portfolio/social/منوعة/01 (13).png',
+            'assets/img/portfolio/social/منوعة/01 (14).png',
+            'assets/img/portfolio/social/منوعة/01 (15).png',
+            'assets/img/portfolio/social/منوعة/01 (16).png',
+            'assets/img/portfolio/social/منوعة/01.jpg',
+            'assets/img/portfolio/social/منوعة/بوست-02.png',
+            'assets/img/portfolio/social/منوعة/سوق.jpg'
         ]
     }
 };
