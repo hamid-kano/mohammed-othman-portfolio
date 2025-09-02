@@ -698,7 +698,6 @@ const portfolioData = {
     socialmix: {
         title: 'تصاميم سوشل ميديا متنوعة',
         images: [
-            'assets/img/portfolio/social/منوعة/01 (1).png',
             'assets/img/portfolio/social/منوعة/01 (2).png',
             'assets/img/portfolio/social/منوعة/01 (3).png',
             'assets/img/portfolio/social/منوعة/01 (4).png',
@@ -708,8 +707,6 @@ const portfolioData = {
             'assets/img/portfolio/social/منوعة/01 (10).png',
             'assets/img/portfolio/social/منوعة/01 (13).png',
             'assets/img/portfolio/social/منوعة/01 (14).png',
-            'assets/img/portfolio/social/منوعة/01 (15).png',
-            'assets/img/portfolio/social/منوعة/01 (16).png',
             'assets/img/portfolio/social/منوعة/01.jpg',
             'assets/img/portfolio/social/منوعة/بوست-02.png',
             'assets/img/portfolio/social/منوعة/سوق.jpg'
