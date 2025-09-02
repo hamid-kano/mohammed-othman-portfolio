@@ -1,0 +1,22 @@
+# Large files that shouldn't be in Git
+*.rar
+*.zip
+*.7z
+
+# Large video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Large image files (optional)
+*.psd
+*.ai
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
