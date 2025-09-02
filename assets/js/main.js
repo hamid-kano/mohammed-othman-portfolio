@@ -649,67 +649,67 @@ const portfolioData = {
     tamkeen: {
         title: 'هوية بصرية تمكين',
         images: [
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_1.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_2.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_3.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_4.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_5.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_6.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_7.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2_8.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 2 copy.jpg',
-            'assets/img/portfolio/branding/تمكين/تمكينArtboard 3.jpg'
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_1.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_2.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_3.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_4.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_5.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_6.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_7.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2_8.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 2 copy.jpg',
+            'assets/img/portfolio/branding/tamkeen/تمكينArtboard 3.jpg'
         ]
     },
     masaha: {
         title: 'هوية بصرية مساحة بلاس',
         images: [
-            'assets/img/portfolio/branding/مساحة بلاس/10.jpg',
-            'assets/img/portfolio/branding/مساحة بلاس/20.jpg',
-            'assets/img/portfolio/branding/مساحة بلاس/30.jpg',
-            'assets/img/portfolio/branding/مساحة بلاس/40.jpg',
-            'assets/img/portfolio/branding/مساحة بلاس/50.jpg',
-            'assets/img/portfolio/branding/مساحة بلاس/60.jpg'
+            'assets/img/portfolio/branding/masaha-plus/10.jpg',
+            'assets/img/portfolio/branding/masaha-plus/20.jpg',
+            'assets/img/portfolio/branding/masaha-plus/30.jpg',
+            'assets/img/portfolio/branding/masaha-plus/40.jpg',
+            'assets/img/portfolio/branding/masaha-plus/50.jpg',
+            'assets/img/portfolio/branding/masaha-plus/60.jpg'
         ]
     },
     yaman: {
         title: 'هوية بصرية يمان',
         images: [
-            'assets/img/portfolio/branding/يمان/01.jpg',
-            'assets/img/portfolio/branding/يمان/02.jpg',
-            'assets/img/portfolio/branding/يمان/03.jpg',
-            'assets/img/portfolio/branding/يمان/04.jpg',
-            'assets/img/portfolio/branding/يمان/05.jpg',
-            'assets/img/portfolio/branding/يمان/06.jpg',
-            'assets/img/portfolio/branding/يمان/07.jpg',
-            'assets/img/portfolio/branding/يمان/11.jpg',
-            'assets/img/portfolio/branding/يمان/BAG-C_side-A.jpg',
-            'assets/img/portfolio/branding/يمان/BAG-C_side-A.jpg-111.jpg'
+            'assets/img/portfolio/branding/yaman/01.jpg',
+            'assets/img/portfolio/branding/yaman/02.jpg',
+            'assets/img/portfolio/branding/yaman/03.jpg',
+            'assets/img/portfolio/branding/yaman/04.jpg',
+            'assets/img/portfolio/branding/yaman/05.jpg',
+            'assets/img/portfolio/branding/yaman/06.jpg',
+            'assets/img/portfolio/branding/yaman/07.jpg',
+            'assets/img/portfolio/branding/yaman/11.jpg',
+            'assets/img/portfolio/branding/yaman/BAG-C_side-A.jpg',
+            'assets/img/portfolio/branding/yaman/BAG-C_side-A.jpg-111.jpg'
         ]
     },
     bison: {
         title: 'حملة دعائية لشركة بايسون',
         images: [
-            'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون.jpg',
-            'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون-2.jpg',
-            'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون-4.jpg'
+            'assets/img/portfolio/social/bison-campaign/bison-post-1.jpg',
+            'assets/img/portfolio/social/bison-campaign/bison-post-2.jpg',
+            'assets/img/portfolio/social/bison-campaign/bison-post-3.jpg'
         ]
     },
     socialmix: {
         title: 'تصاميم سوشل ميديا متنوعة',
         images: [
-            'assets/img/portfolio/social/منوعة/01 (2).png',
-            'assets/img/portfolio/social/منوعة/01 (3).png',
-            'assets/img/portfolio/social/منوعة/01 (4).png',
-            'assets/img/portfolio/social/منوعة/01 (5).png',
-            'assets/img/portfolio/social/منوعة/01 (6).png',
-            'assets/img/portfolio/social/منوعة/01 (9).png',
-            'assets/img/portfolio/social/منوعة/01 (10).png',
-            'assets/img/portfolio/social/منوعة/01 (13).png',
-            'assets/img/portfolio/social/منوعة/01 (14).png',
-            'assets/img/portfolio/social/منوعة/01.jpg',
-            'assets/img/portfolio/social/منوعة/بوست-02.png',
-            'assets/img/portfolio/social/منوعة/سوق.jpg'
+            'assets/img/portfolio/social/mixed/01 (2).png',
+            'assets/img/portfolio/social/mixed/01 (3).png',
+            'assets/img/portfolio/social/mixed/01 (4).png',
+            'assets/img/portfolio/social/mixed/01 (5).png',
+            'assets/img/portfolio/social/mixed/01 (6).png',
+            'assets/img/portfolio/social/mixed/01 (9).png',
+            'assets/img/portfolio/social/mixed/01 (10).png',
+            'assets/img/portfolio/social/mixed/01 (13).png',
+            'assets/img/portfolio/social/mixed/01 (14).png',
+            'assets/img/portfolio/social/mixed/01.jpg',
+            'assets/img/portfolio/social/mixed/post-02.png',
+            'assets/img/portfolio/social/mixed/market.jpg'
         ]
     }
 };
