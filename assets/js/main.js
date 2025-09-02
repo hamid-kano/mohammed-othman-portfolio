@@ -727,12 +727,16 @@ function openPortfolioModal(projectId) {
     
     project.images.forEach((imagePath, index) => {
         const imageContainer = document.createElement('div');
-        imageContainer.className = 'group relative bg-slate-700/30 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300';
+        imageContainer.className = 'group relative bg-slate-700/30 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer';
         imageContainer.innerHTML = `
             <div class="aspect-[4/3] overflow-hidden">
                 <img src="${imagePath}" alt="${project.title} - ${index + 1}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
             </div>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                <i data-lucide="expand" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+            </div>
         `;
+        imageContainer.addEventListener('click', () => openFullscreenModal(imagePath, `${project.title} - ${index + 1}`));
         gallery.appendChild(imageContainer);
     });
     
@@ -749,10 +753,35 @@ function closePortfolioModal() {
     document.body.style.overflow = 'auto';
 }
 
+function openFullscreenModal(imageSrc, imageAlt) {
+    const modal = document.getElementById('fullscreen-modal');
+    const image = document.getElementById('fullscreen-image');
+    
+    image.src = imageSrc;
+    image.alt = imageAlt;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    lucide.createIcons();
+}
+
+function closeFullscreenModal() {
+    const modal = document.getElementById('fullscreen-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'hidden'; // Keep portfolio modal scroll disabled
+}
+
 // Close modal on escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-        closePortfolioModal();
+        const fullscreenModal = document.getElementById('fullscreen-modal');
+        const portfolioModal = document.getElementById('portfolio-modal');
+        
+        if (!fullscreenModal.classList.contains('hidden')) {
+            closeFullscreenModal();
+        } else if (!portfolioModal.classList.contains('hidden')) {
+            closePortfolioModal();
+        }
     }
 });
 
