@@ -882,8 +882,8 @@
             <!-- Portfolio Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="portfolio-grid">
                 <!-- Divo Brand -->
-                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-purple-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="100" onclick="openPortfolioModal('divo')">
+                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-purple-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 cursor-pointer">
                         <div class="aspect-[4/3] overflow-hidden">
                             <img src="assets/img/portfolio/branding/divo/01 (1).png" alt="هوية بصرية Divo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
@@ -897,12 +897,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-lucide="eye" class="w-4 h-4 text-white"></i>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Vira Brand -->
-                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-pink-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="200" onclick="openPortfolioModal('vira')">
+                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-pink-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 cursor-pointer">
                         <div class="aspect-[4/3] overflow-hidden">
                             <img src="assets/img/portfolio/branding/vira/00Artboard 1_1.jpg" alt="هوية بصرية Vira" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
@@ -916,31 +919,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Social Media Campaign -->
-                <div class="portfolio-item social" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-green-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون.jpg" alt="حملة بايسون" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="absolute bottom-0 left-0 right-0 p-6">
-                                <h3 class="text-xl font-bold text-white mb-2">حملة دعائية لشركة بايسون</h3>
-                                <p class="text-slate-300 text-sm mb-4">تصميم حملة إعلانية متكاملة</p>
-                                <div class="flex gap-2">
-                                    <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Photoshop</span>
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Illustrator</span>
-                                </div>
-                            </div>
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-lucide="eye" class="w-4 h-4 text-white"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Sky Logo -->
-                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-indigo-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="300" onclick="openPortfolioModal('sky')">
+                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-indigo-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 cursor-pointer">
                         <div class="aspect-[4/3] overflow-hidden">
                             <img src="assets/img/portfolio/branding/sky/SKY LOGOArtboard 1_1.jpg" alt="شعار Sky" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
@@ -954,12 +941,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-lucide="eye" class="w-4 h-4 text-white"></i>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Himo Brand -->
-                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-amber-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="400" onclick="openPortfolioModal('himo')">
+                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-amber-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 cursor-pointer">
                         <div class="aspect-[4/3] overflow-hidden">
                             <img src="assets/img/portfolio/branding/himo/01.jpg" alt="هوية بصرية Himo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
@@ -973,12 +963,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-lucide="eye" class="w-4 h-4 text-white"></i>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- SCC Brand -->
-                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-teal-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div class="portfolio-item branding" data-aos="zoom-in" data-aos-delay="500" onclick="openPortfolioModal('scc')">
+                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-teal-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 cursor-pointer">
                         <div class="aspect-[4/3] overflow-hidden">
                             <img src="assets/img/portfolio/branding/scc/sccArtboard 1.jpg" alt="هوية بصرية SCC" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         </div>
@@ -991,6 +984,31 @@
                                     <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs">Photoshop</span>
                                 </div>
                             </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-lucide="eye" class="w-4 h-4 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media Campaign -->
+                <div class="portfolio-item social" data-aos="zoom-in" data-aos-delay="600" onclick="openPortfolioModal('bison')">
+                    <div class="group relative bg-slate-800/50 backdrop-blur-xl border border-green-500/30 rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 cursor-pointer">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون.jpg" alt="حملة بايسون" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">حملة دعائية لشركة بايسون</h3>
+                                <p class="text-slate-300 text-sm mb-4">تصميم حملة إعلانية متكاملة</p>
+                                <div class="flex gap-2">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Photoshop</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Illustrator</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-lucide="eye" class="w-4 h-4 text-white"></i>
                         </div>
                     </div>
                 </div>
@@ -1438,6 +1456,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePortfolioModal()"></div>
+        <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+            <div class="bg-slate-800/95 backdrop-blur-xl border border-slate-700/50 rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between p-6 border-b border-slate-700/50">
+                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                    <button onclick="closePortfolioModal()" class="w-10 h-10 bg-slate-700/50 hover:bg-slate-600/50 rounded-full flex items-center justify-center transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 text-white"></i>
+                    </button>
+                </div>
+                
+                <!-- Modal Content -->
+                <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                    <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-slate-900 border-t border-slate-800 py-12">

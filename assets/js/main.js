@@ -495,6 +495,115 @@ function initScrollToTop() {
 // Initialize scroll to top
 document.addEventListener('DOMContentLoaded', initScrollToTop);
 
+// Portfolio Modal functionality
+const portfolioData = {
+    divo: {
+        title: 'هوية بصرية Divo',
+        images: [
+            'assets/img/portfolio/branding/divo/01 (1).png',
+            'assets/img/portfolio/branding/divo/01 (3).png',
+            'assets/img/portfolio/branding/divo/01 (4).png',
+            'assets/img/portfolio/branding/divo/01 (5).png',
+            'assets/img/portfolio/branding/divo/01 (6).png',
+            'assets/img/portfolio/branding/divo/01 (7).png'
+        ]
+    },
+    vira: {
+        title: 'هوية بصرية Vira',
+        images: [
+            'assets/img/portfolio/branding/vira/00Artboard 1_1.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 1_2.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 2.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 4.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 5.jpg',
+            'assets/img/portfolio/branding/vira/00Artboard 6.jpg'
+        ]
+    },
+    sky: {
+        title: 'شعار Sky',
+        images: [
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 1_1.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 1_2.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 2.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_1.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_2.jpg',
+            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_3.jpg'
+        ]
+    },
+    himo: {
+        title: 'هوية بصرية Himo',
+        images: [
+            'assets/img/portfolio/branding/himo/01.jpg',
+            'assets/img/portfolio/branding/himo/02.jpg',
+            'assets/img/portfolio/branding/himo/03.jpg',
+            'assets/img/portfolio/branding/himo/04.jpg',
+            'assets/img/portfolio/branding/himo/05.jpg',
+            'assets/img/portfolio/branding/himo/06.jpg'
+        ]
+    },
+    scc: {
+        title: 'هوية بصرية SCC',
+        images: [
+            'assets/img/portfolio/branding/scc/sccArtboard 1.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 2.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 3.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 4.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 5.jpg',
+            'assets/img/portfolio/branding/scc/sccArtboard 6.jpg'
+        ]
+    },
+    bison: {
+        title: 'حملة دعائية لشركة بايسون',
+        images: [
+            'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون.jpg',
+            'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون-2.jpg',
+            'assets/img/portfolio/social/حملة دعائية لشركة بايسون/بوست-بايسون-4.jpg'
+        ]
+    }
+};
+
+function openPortfolioModal(projectId) {
+    const modal = document.getElementById('portfolio-modal');
+    const title = document.getElementById('modal-title');
+    const gallery = document.getElementById('modal-gallery');
+    
+    const project = portfolioData[projectId];
+    if (!project) return;
+    
+    title.textContent = project.title;
+    gallery.innerHTML = '';
+    
+    project.images.forEach((imagePath, index) => {
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'group relative bg-slate-700/30 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300';
+        imageContainer.innerHTML = `
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="${imagePath}" alt="${project.title} - ${index + 1}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+            </div>
+        `;
+        gallery.appendChild(imageContainer);
+    });
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // Recreate icons
+    lucide.createIcons();
+}
+
+function closePortfolioModal() {
+    const modal = document.getElementById('portfolio-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closePortfolioModal();
+    }
+});
+
 // Portfolio items animation on scroll
 function initPortfolioItemsAnimation() {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
