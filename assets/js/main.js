@@ -709,7 +709,18 @@ const portfolioData = {
             'assets/img/portfolio/social/mixed/01 (14).png',
             'assets/img/portfolio/social/mixed/01.jpg',
             'assets/img/portfolio/social/mixed/post-02.png',
-            'assets/img/portfolio/social/mixed/market.jpg'
+            'assets/img/portfolio/social/mixed/market.jpg',
+            'assets/img/portfolio/social/mixed/screenshot-1.png',
+            'assets/img/portfolio/social/mixed/screenshot-2.png',
+            'assets/img/portfolio/social/mixed/screenshot-3.png',
+            'assets/img/portfolio/social/mixed/screenshot-4.png',
+            'assets/img/portfolio/social/mixed/screenshot-5.png',
+            'assets/img/portfolio/social/mixed/screenshot-6.png',
+            'assets/img/portfolio/social/mixed/screenshot-7.png',
+            'assets/img/portfolio/social/mixed/screenshot-8.png',
+            'assets/img/portfolio/social/mixed/screenshot-9.png',
+            'assets/img/portfolio/social/mixed/screenshot-10.png',
+            'assets/img/portfolio/social/mixed/screenshot-11.png'
         ]
     }
 };
