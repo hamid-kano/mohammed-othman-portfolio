@@ -542,7 +542,6 @@ const portfolioData = {
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_2.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_3.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_4.jpg',
-            'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_5.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_6.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_7.jpg',
             'assets/img/portfolio/branding/sky/SKY LOGOArtboard 3_8.jpg'
@@ -630,8 +629,7 @@ const portfolioData = {
             'assets/img/portfolio/branding/Pure Smile/06.jpg',
             'assets/img/portfolio/branding/Pure Smile/07.jpg',
             'assets/img/portfolio/branding/Pure Smile/08.jpg',
-            'assets/img/portfolio/branding/Pure Smile/09.jpg',
-            'assets/img/portfolio/branding/Pure Smile/10.jpg'
+            'assets/img/portfolio/branding/Pure Smile/09.jpg'
         ]
     },
     whitbuffalo: {
@@ -708,8 +706,6 @@ const portfolioData = {
             'assets/img/portfolio/social/منوعة/01 (6).png',
             'assets/img/portfolio/social/منوعة/01 (9).png',
             'assets/img/portfolio/social/منوعة/01 (10).png',
-            'assets/img/portfolio/social/منوعة/01 (11).png',
-            'assets/img/portfolio/social/منوعة/01 (12).png',
             'assets/img/portfolio/social/منوعة/01 (13).png',
             'assets/img/portfolio/social/منوعة/01 (14).png',
             'assets/img/portfolio/social/منوعة/01 (15).png',
